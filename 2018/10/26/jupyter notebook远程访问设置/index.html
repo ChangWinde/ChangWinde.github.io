@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="ML,">
+  <meta name="keywords" content="Hexo,next">
 
 
 
@@ -41,18 +41,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1">
 
 
-<meta name="description" content="列表截取123# L[2]索引3号元素；L[-2]索引倒数第二个元素；L[1:]从第2个元素开始截取列表# 备注：其他的形式基本就是这些的引申 添加元素1234list.append() # 直接添加list.extend() # 拆分元素添加[在列表末尾一次性追加另一个序列中的多个值] 12345a = [1,2],b = [3,4]a.append(b) # a = [1,2,[3,4]]a.">
-<meta name="keywords" content="ML">
+<meta name="description" content="jupyter notebook远程访问配置  为什么要做jupyter notebook的远程访问呢？我在服务器上配置了一些环境，但是本地上并没有这些环境，使用jupyter notebook远程访问服务器的话，那么就可以在本地的浏览器中愉快的写代码了！ 配置 检查服务器上是否有jupyter notebook  12345#直接终端输入jupyter notebook#如果没有sudo pip">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python语法补充">
-<meta property="og:url" content="https://changwinde.github.io/2018/02/03/Python语法补充/index.html">
+<meta property="og:title" content="ChangWinde&#39;s blog">
+<meta property="og:url" content="https://changwinde.github.io/2018/10/26/jupyter notebook远程访问设置/index.html">
 <meta property="og:site_name" content="ChangWinde&#39;s blog">
-<meta property="og:description" content="列表截取123# L[2]索引3号元素；L[-2]索引倒数第二个元素；L[1:]从第2个元素开始截取列表# 备注：其他的形式基本就是这些的引申 添加元素1234list.append() # 直接添加list.extend() # 拆分元素添加[在列表末尾一次性追加另一个序列中的多个值] 12345a = [1,2],b = [3,4]a.append(b) # a = [1,2,[3,4]]a.">
+<meta property="og:description" content="jupyter notebook远程访问配置  为什么要做jupyter notebook的远程访问呢？我在服务器上配置了一些环境，但是本地上并没有这些环境，使用jupyter notebook远程访问服务器的话，那么就可以在本地的浏览器中愉快的写代码了！ 配置 检查服务器上是否有jupyter notebook  12345#直接终端输入jupyter notebook#如果没有sudo pip">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-26T11:27:51.289Z">
+<meta property="og:updated_time" content="2018-10-26T12:13:38.319Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python语法补充">
-<meta name="twitter:description" content="列表截取123# L[2]索引3号元素；L[-2]索引倒数第二个元素；L[1:]从第2个元素开始截取列表# 备注：其他的形式基本就是这些的引申 添加元素1234list.append() # 直接添加list.extend() # 拆分元素添加[在列表末尾一次性追加另一个序列中的多个值] 12345a = [1,2],b = [3,4]a.append(b) # a = [1,2,[3,4]]a.">
+<meta name="twitter:title" content="ChangWinde&#39;s blog">
+<meta name="twitter:description" content="jupyter notebook远程访问配置  为什么要做jupyter notebook的远程访问呢？我在服务器上配置了一些环境，但是本地上并没有这些环境，使用jupyter notebook远程访问服务器的话，那么就可以在本地的浏览器中愉快的写代码了！ 配置 检查服务器上是否有jupyter notebook  12345#直接终端输入jupyter notebook#如果没有sudo pip">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +61,7 @@
   };
 </script>
 
-  <title> Python语法补充 | ChangWinde's blog </title>
+  <title>  | ChangWinde's blog </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -219,7 +218,7 @@
           
           
             
-              Python语法补充
+              
             
           
         </h1>
@@ -228,8 +227,8 @@
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2018-02-03T14:18:21+08:00" content="2018-02-03">
-            2018-02-03
+          <time itemprop="dateCreated" datetime="2018-10-26T20:13:38+08:00" content="2018-10-26">
+            2018-10-26
           </time>
         </span>
 
@@ -239,8 +238,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2018/02/03/Python语法补充/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/03/Python语法补充/" itemprop="commentsCount"></span>
+            <a href="/2018/10/26/jupyter notebook远程访问设置/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/10/26/jupyter notebook远程访问设置/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -254,37 +253,49 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="截取"><a href="#截取" class="headerlink" title="截取"></a>截取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># L[2]索引3号元素；L[-2]索引倒数第二个元素；L[1:]从第2个元素开始截取列表</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 备注：其他的形式基本就是这些的引申</span></span><br></pre></td></tr></table></figure>
-<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list.append() </span><br><span class="line"><span class="comment"># 直接添加</span></span><br><span class="line">list.extend() </span><br><span class="line"><span class="comment"># 拆分元素添加[在列表末尾一次性追加另一个序列中的多个值]</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>],b = [<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">a.append(b) </span><br><span class="line"><span class="comment"># a = [1,2,[3,4]]</span></span><br><span class="line">a.extend(b) </span><br><span class="line"><span class="comment"># a = [1,2,3,4]</span></span><br></pre></td></tr></table></figure>
-<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><h2 id="推导式"><a href="#推导式" class="headerlink" title="推导式"></a>推导式</h2><h3 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h3><h4 id="1-使用-生成list"><a href="#1-使用-生成list" class="headerlink" title="1. 使用[]生成list"></a>1. 使用[]生成list</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">variable = [out_exp_res <span class="keyword">for</span> out_exp <span class="keyword">in</span> input_list <span class="keyword">if</span> out_exp == <span class="number">2</span>]</span><br><span class="line">  out_exp_res:　　<span class="comment"># 列表生成元素表达式，可以是有返回值的函数。</span></span><br><span class="line">  <span class="keyword">for</span> out_exp <span class="keyword">in</span> input_list：<span class="comment"># 迭代input_list将out_exp传入out_exp_res表达式中。</span></span><br><span class="line">  <span class="keyword">if</span> out_exp == <span class="number">2</span>：<span class="comment"># 根据条件过滤哪些值可以。</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># example1</span></span><br><span class="line">multiples = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">30</span>) <span class="keyword">if</span> i % <span class="number">3</span> <span class="keyword">is</span> <span class="number">0</span>]</span><br><span class="line">print(multiples)</span><br><span class="line"><span class="comment"># Output: [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># example2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">squared</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x*x</span><br><span class="line">multiples = [squared(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">30</span>) <span class="keyword">if</span> i % <span class="number">3</span> <span class="keyword">is</span> <span class="number">0</span>]</span><br><span class="line"><span class="keyword">print</span> multiples</span><br><span class="line"><span class="comment">#  Output: [0, 9, 36, 81, 144, 225, 324, 441, 576, 729]</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-使用-生成generator"><a href="#2-使用-生成generator" class="headerlink" title="2. 使用()生成generator"></a>2. 使用()生成generator</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将上面的[]改为()即可得到生成器</span></span><br><span class="line">multiples = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">30</span>) <span class="keyword">if</span> i % <span class="number">3</span> <span class="keyword">is</span> <span class="number">0</span>)</span><br><span class="line">print(type(multiples))</span><br><span class="line"><span class="comment">#  Output: &lt;type 'generator'&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="字典推导式"><a href="#字典推导式" class="headerlink" title="字典推导式"></a>字典推导式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字典的推导式和列表差不多只不过用的是&#123;&#125;</span></span><br><span class="line"><span class="comment"># example1 大小写合并</span></span><br><span class="line">mcase = &#123;<span class="string">'a'</span>: <span class="number">10</span>, <span class="string">'b'</span>: <span class="number">34</span>, <span class="string">'A'</span>: <span class="number">7</span>, <span class="string">'Z'</span>: <span class="number">3</span>&#125;</span><br><span class="line">mcase_frequency = &#123;</span><br><span class="line">    k.lower(): mcase.get(k.lower(), <span class="number">0</span>) + mcase.get(k.upper(), <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> mcase.keys()</span><br><span class="line">    <span class="keyword">if</span> k.lower() <span class="keyword">in</span> [<span class="string">'a'</span>,<span class="string">'b'</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">print</span> mcase_frequency</span><br><span class="line"><span class="comment">#  Output: &#123;'a': 17, 'b': 34&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># example2 键值调换</span></span><br><span class="line">mcase = &#123;<span class="string">'a'</span>: <span class="number">10</span>, <span class="string">'b'</span>: <span class="number">34</span>&#125;</span><br><span class="line">mcase_frequency = &#123;v: k <span class="keyword">for</span> k, v <span class="keyword">in</span> mcase.items()&#125;</span><br><span class="line"><span class="keyword">print</span> mcase_frequency</span><br><span class="line"><span class="comment">#  Output: &#123;10: 'a', 34: 'b'&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="集合推导式"><a href="#集合推导式" class="headerlink" title="集合推导式"></a>集合推导式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 集合的和前两个也是差不多但是使用的是&#123;&#125;</span></span><br><span class="line">squared = &#123;x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>]&#125;</span><br><span class="line">print(squared)</span><br><span class="line"><span class="comment"># Output: set([1, 4])</span></span><br></pre></td></tr></table></figure>
+        <span itemprop="articleBody"><h1 id="jupyter-notebook远程访问配置"><a href="#jupyter-notebook远程访问配置" class="headerlink" title="jupyter notebook远程访问配置"></a>jupyter notebook远程访问配置</h1><p>  为什么要做jupyter notebook的远程访问呢？我在服务器上配置了一些环境，但是本地上并没有这些环境，使用jupyter notebook远程访问服务器的话，那么就可以在本地的浏览器中愉快的写代码了！</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li>检查服务器上是否有jupyter notebook</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>直接终端输入</span><br><span class="line">jupyter notebook</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>如果没有</span><br><span class="line">sudo pip install jupyter</span><br></pre></td></tr></table></figure>
+<ul>
+<li>生成配置文件</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br><span class="line"><span class="meta">#</span>Writing default config to: /home/Yourname/.jupyter/jupyter_notebook_config.py 表示执行成功</span><br></pre></td></tr></table></figure>
+<ul>
+<li>生成密码</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook password</span><br><span class="line"><span class="meta">#</span>Enter password:</span><br><span class="line"><span class="meta">#</span>Verify password:</span><br><span class="line"><span class="meta">#</span>[NotebookPasswordApp] Wrote hashed password to /home/ubuntu/.jupyter/jupyter_notebook_config.json</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改配置文件</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /home/Yourname/.jupyter/jupyter_notebook_config.py</span><br></pre></td></tr></table></figure>
+<p>修改以下配置</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">c</span>.NotebookApp.ip=<span class="string">'*'</span></span><br><span class="line"><span class="keyword">c</span>.NotebookApp.open_browser = False</span><br></pre></td></tr></table></figure>
+<ul>
+<li>打开jupyter notebook</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --no-browser --port=8888</span><br></pre></td></tr></table></figure>
+<p>这时候可以在本地浏览器中直接<a href="http://serverIP:8888" target="_blank" rel="noopener">http://serverIP:8888</a> 就可以访问了</p>
+<p>备注： 如果访问不了，很可能就是防火墙的问题，这时候只需要打开本地终端然后，建立一个SSH隧道</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@serverIP -L 127.0.0.1:12345:127.0.0.1:8888</span><br></pre></td></tr></table></figure>
+<p>ssh是一个很有趣的协议，它可以帮助你完成很多有趣的事情，要是有兴趣可以了解一下ssh</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/ML/" rel="tag">#ML</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/10/SuppoutVectorMachine/" rel="prev">SupportVectorMachine</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/03/DecisionTree/" rel="next">DecisionTree</a>
+              <a href="/2018/03/04/Latex配置/" rel="next">Latex配置</a>
             
           </div>
         </div>
@@ -560,7 +571,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">1.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#截取"><span class="nav-number">1.1.</span> <span class="nav-text">截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加元素"><span class="nav-number">1.2.</span> <span class="nav-text">添加元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">2.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推导式"><span class="nav-number">3.</span> <span class="nav-text">推导式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表推导式"><span class="nav-number">3.1.</span> <span class="nav-text">列表推导式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用-生成list"><span class="nav-number">3.1.1.</span> <span class="nav-text">1. 使用[]生成list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用-生成generator"><span class="nav-number">3.1.2.</span> <span class="nav-text">2. 使用()生成generator</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典推导式"><span class="nav-number">3.2.</span> <span class="nav-text">字典推导式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合推导式"><span class="nav-number">3.3.</span> <span class="nav-text">集合推导式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jupyter-notebook远程访问配置"><span class="nav-number">1.</span> <span class="nav-text">jupyter notebook远程访问配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.1.</span> <span class="nav-text">配置</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -626,9 +637,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'xxx';
-      var disqus_identifier = '2018/02/03/Python语法补充/';
-      var disqus_title = 'Python语法补充';
-      var disqus_url = 'https://changwinde.github.io/2018/02/03/Python语法补充/';
+      var disqus_identifier = '2018/10/26/jupyter notebook远程访问设置/';
+      var disqus_title = '';
+      var disqus_url = 'https://changwinde.github.io/2018/10/26/jupyter notebook远程访问设置/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
