@@ -1,0 +1,989 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mala">
+<head><meta name="generator" content="Hexo 3.8.0">
+  
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+  <meta name="google-site-verification" content="xxx">
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1">
+
+
+
+
+  <meta name="keywords" content="ML,">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ChangWinde's blog" type="application/atom+xml">
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1">
+
+
+<meta name="description" content="聚类任务  聚类可以作为一个单独的过程，用于寻找数据集内部的分布结构。所谓聚类，形式化地说，就是将数据集划分成k个不相交的簇，每一个簇就是一个类，聚类的结果可以用一个向量$\pmb\lambda = (\lambda_1,\lambda_2,…,\lambda_m)$（假设数据集D包含m个样本） 性能度量  我们希望看到的是“物以类聚”，所以说我们希望看到的是，簇内相似度高，簇间相似度低。 外部指">
+<meta name="keywords" content="ML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Clustering">
+<meta property="og:url" content="https://changwinde.github.io/2018/02/12/Clustering/index.html">
+<meta property="og:site_name" content="ChangWinde&#39;s blog">
+<meta property="og:description" content="聚类任务  聚类可以作为一个单独的过程，用于寻找数据集内部的分布结构。所谓聚类，形式化地说，就是将数据集划分成k个不相交的簇，每一个簇就是一个类，聚类的结果可以用一个向量$\pmb\lambda = (\lambda_1,\lambda_2,…,\lambda_m)$（假设数据集D包含m个样本） 性能度量  我们希望看到的是“物以类聚”，所以说我们希望看到的是，簇内相似度高，簇间相似度低。 外部指">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-26T11:27:51.280Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Clustering">
+<meta name="twitter:description" content="聚类任务  聚类可以作为一个单独的过程，用于寻找数据集内部的分布结构。所谓聚类，形式化地说，就是将数据集划分成k个不相交的簇，每一个簇就是一个类，聚类的结果可以用一个向量$\pmb\lambda = (\lambda_1,\lambda_2,…,\lambda_m)$（假设数据集D包含m个样本） 性能度量  我们希望看到的是“物以类聚”，所以说我们希望看到的是，簇内相似度高，簇间相似度低。 外部指">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mala',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> Clustering | ChangWinde's blog </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'xxx', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?xxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">志若飞鸿 心将惊宇</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br>
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br>
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br>
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br>
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br>
+            About
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input">
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xxx','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              Clustering
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2018-02-12T18:46:39+08:00" content="2018-02-12">
+            2018-02-12
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2018/02/12/Clustering/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/12/Clustering/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h3 id="聚类任务"><a href="#聚类任务" class="headerlink" title="聚类任务"></a>聚类任务</h3><p>  聚类可以作为一个单独的过程，用于寻找数据集内部的分布结构。所谓聚类，形式化地说，就是将数据集划分成k个不相交的簇，每一个簇就是一个类，聚类的结果可以用一个向量$\pmb\lambda = (\lambda_1,\lambda_2,…,\lambda_m)$（假设数据集D包含m个样本）</p>
+<h3 id="性能度量"><a href="#性能度量" class="headerlink" title="性能度量"></a>性能度量</h3><p>  我们希望看到的是“物以类聚”，所以说我们希望看到的是，簇内相似度高，簇间相似度低。</p>
+<h4 id="外部指标度量"><a href="#外部指标度量" class="headerlink" title="外部指标度量"></a>外部指标度量</h4><p>  对于数据集$D = (x_1,x_2,…,x_m)$假定通过聚类给出的簇划分为$C = {C_!,C_2,…,C_k}$参考模型给出额度簇划分为$C^<em> = {C^</em>_1,C^<em>_2,…,C^</em>_s}$相C^<em> = {C^</em>_1,C^<em>_2,…,C^</em>_s}应的$\pmb{\lambda,\lambda^*}$为它们的簇标记向量</p>
+<p>定义：<br>$$<br>\begin{array}{}<br>a = |SS|,SS = {(\pmb{x_i,x_j})| \lambda_i = \lambda_j , \lambda^<em>_i = \lambda^</em>_j,i&lt;j} \<br>b = |SD|,SD = {(\pmb{x_i,x_j})| \lambda_i = \lambda_j , \lambda^<em>_i \neq\lambda^</em>_j,i&lt;j} \<br>c = |DS|,DS = {(\pmb{x_i,x_j})| \lambda_i \neq \lambda_j , \lambda^<em>_i = \lambda^</em>_j,i&lt;j} \<br>d = |DD|,DD = {(\pmb{x_i,x_j})| \lambda_i \neq \lambda_j , \lambda^<em>_i \neq \lambda^</em>_j,i&lt;j} \<br>\end{array}<br>$$<br>  其中a表示在C中隶属于相同簇的样本对，在$C^*$也是隶属于同一个簇，bcd也是类似</p>
+<p>基于上述的式子，可以有下面的指标：</p>
+<ul>
+<li>Jaccard系数：</li>
+</ul>
+<p>$$<br>JC = \frac{a}{a+b+c}<br>$$</p>
+<ul>
+<li>FM指数：</li>
+</ul>
+<p>$$<br>FNI = \sqrt{\frac{a}{a+b} \cdot \frac{a}{a+c} }<br>$$</p>
+<ul>
+<li>Rand指数：</li>
+</ul>
+<p>$$<br>RI = \frac{2(a+d)}{m(m-1)}<br>$$</p>
+<p>上述的指标的范围都是[0,1]，值越大越好</p>
+<h4 id="内部指标度量"><a href="#内部指标度量" class="headerlink" title="内部指标度量"></a>内部指标度量</h4><p>对于$C = {C_!,C_2,…,C_k}$，我们定义：<br>$$<br>\begin{array}{}<br>avg(C) = \frac{2}{|C|(|C|-1)} \sum_{1 \le i\le j\le |C|}dist(\pmb{x_i,x_j})\<br>\color{red}{对于簇C样本间平均距离}\<br>diam(C) = \max \limits_{1 \le i\le j\le |C|}dist(\pmb{x_i,x_j})\<br>\color{red}{表示簇C中样本间的最大距离}\<br>d_{min}(C_i,C_j) = \min \limits_{\pmb{x_i} \in C_i,\pmb{x_j} \in C_j}dist(\pmb{x_i,x_j})\<br>\color{red}{对于簇C_i与簇C_j最近样本间的距离}\<br>d_{cen}(C_i,C_j) = dist(\pmb{\mu_i,\mu_j})\<br>\color{red}{对于簇C_i与簇C_j中心点间的距离}\<br>\end{array}<br>$$<br>其中$\mu$表示簇C的中心点，$\pmb{\mu} = \frac{1}{|C|} \sum_{1 \le i\le |C|} \pmb{x_i}$</p>
+<ul>
+<li>DB指数：</li>
+</ul>
+<p>$$<br>DBI = \frac{1}{k} \sum^k_{i =1} \max \limits_{j \neq i}(\frac{avg(C_i)+avg(C_j)}{d_{cen}(\pmb{\mu_i,\mu_j})})<br>$$</p>
+<ul>
+<li>Dunn指数：</li>
+</ul>
+<p>$$<br>DI = \min \limits_{1 \le i \le k}{ \min \limits_{j \neq i} (\frac{d_min(C_i,C_j)}{\max \limits_{1 \le l \le k}diam(C_l)})}<br>$$</p>
+<p>DBI指数越小越好，但是DI值越大越好</p>
+<h3 id="距离计算"><a href="#距离计算" class="headerlink" title="距离计算"></a>距离计算</h3><p>  连续属性是有序属性，但是离散属性不一定是（比如，离散集合颜色集合{红，黄，蓝}其中的元素是没有大小顺序的；而离散集合数字集合{1，2,3}是有序的）</p>
+<h4 id="有序属性"><a href="#有序属性" class="headerlink" title="有序属性"></a>有序属性</h4><p>  闵可夫斯基距离：<br>$$<br>dist_{mk}(\pmb{x_i,x_j}) = (\sum^n_{i = 1}|x_{iu}-x_{ju}|^p)^{\frac{1}{p}}<br>$$<br>备注：<br>$$<br>p = 1时， 闵可夫斯基距离即曼哈顿距离\<br>p = 2时，闵可夫斯基距离即欧式距离<br>$$</p>
+<h4 id="无序属性"><a href="#无序属性" class="headerlink" title="无序属性"></a>无序属性</h4><p>  $m_{u，a}表示属性u上取值为a的样本数量，m_{u,a,i}表示在第i个样本簇中属性u取值为a的样本数量$<br>$$<br>VDM_{p}(a,b) = \sum^k_{i = 1}|\frac{m_{u,a,i}}{m_{u,a}}-\frac{m_{u,b,i}}{m_{u,b}}|^p<br>$$</p>
+<h3 id="原型聚类"><a href="#原型聚类" class="headerlink" title="原型聚类"></a>原型聚类</h3><p>  这类算法都是假设聚类结构可以通过一组原型刻画。通常是先对原型初始化，然后通过迭代更新求解</p>
+<h4 id="k均值算法"><a href="#k均值算法" class="headerlink" title="k均值算法"></a>k均值算法</h4><h5 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h5><p>对于给定的样本集合$D = {x_1,x_2,..,x_m}$ “k均值”针对所得簇的划分最小化平方误差<br>$$<br>E = \sum_{i =1}^k \sum_{x \in c_i}{|| x - \mu_i||^2_2}<br>$$<br>其中$\mu_i = \frac{1}{|C_i|}\sum_{x \in C_i} x$ 是簇$C_i$的均值向量。上式其实刻画的是，簇内样本围绕均值向量的紧密程度</p>
+<h5 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h5><p>我们假设样本集为$D = {x_1,x_2,..,x_m}$ 聚类簇数为k</p>
+<ol>
+<li>从D中随机选取k个样本作为初始均值向量${\mu_1.\mu_2,..,\mu_k}$</li>
+<li>遍历整个集合，对于某一个样本$x_i$，计算它对每一个均值向量的距离$d_{ij} = ||x_i - \mu_j||^2$，并且将它划入到距离最近的那个均值向量所表示的簇中</li>
+<li>重新更新均值向量。遍历k个均值向量 ，更新$\mu^{\prime}_i = \frac{1}{|C_i|}\sum_{x \in C_i} x$</li>
+<li>重复2~3步骤直到满足，条件“当前均值向量都没有被更新”</li>
+</ol>
+<h4 id="学习向量量化"><a href="#学习向量量化" class="headerlink" title="学习向量量化"></a>学习向量量化</h4><p>与k均值相似的是，LVQ也是试图找到一组原型向量来刻画聚类结构的</p>
+<h5 id="内容-1"><a href="#内容-1" class="headerlink" title="内容"></a>内容</h5><p>给定样本集$D = {(x_1,y_1),(x_2,y_2),..,(x_m,y_m)}$ 并且每个样本都是由n个属性描述的特征向量，而LVQ的主要目标就是学习得到一组n维的原型向量${p_1,p_2,…,p_q}$ ，一个原型向量表示一个簇。</p>
+<p>$原型向量一个有q个，各原型向量预设的标记值为{t_1,t_2,…,t_q} 并且学习率 \eta \in(0,1)$</p>
+<h5 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h5><ol>
+<li>初始化一组原型向量${p_1,p_2,…,p_q}$ </li>
+<li>在样本集合中随机的选取样本$(x_j,y_j)$ 计算样本和各个原型向量的距离并找到最近的原型向量</li>
+<li>如果我们找到的最近的原型向量的标记值$t_i = y_j$ 那么我们将$p_i更新为 p_i = p_i + (1+\eta) \cdot(x_j -p_i)$ 否则更新为$p_i = p_i  (1- \eta) \cdot(x_j -p_i)$  【备注：这里我们可以看到如果标记值是一致的，那么我们的$||p_i-x_j||_2 = (1-\eta) \cdot ||p_i-x_j||_2$】</li>
+</ol>
+<h3 id="密度聚类"><a href="#密度聚类" class="headerlink" title="密度聚类"></a>密度聚类</h3><p>  这类算法是假定聚类结构可以通过样本分布的紧密程度来确定。</p>
+<h4 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h4><p>  这是密度聚类算法的一种。基于”领域”的概念（$\epsilon , MinPts$）来刻画样本样本分布的紧密程度。我们假设样本集为$D = {x_1,x_2,..,x_m}$</p>
+<h5 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h5><ul>
+<li>$\epsilon-领域$ ：其$\epsilon-领域$ 包含样本集D中与$x_j$距离不大于$\epsilon$的样本，即为$N_{\epsilon}(x_j) = {x_i \in D \mid dist(x_i,x_j) \leq \epsilon}$ </li>
+<li>核心对象：若在$x_j$的$\epsilon-领域$中至少有$Minpts$个样本，即$|N_{\epsilon}(x_j)| \geq Minpts$个样本，满足上述条件则$x_j$是一个核心对象</li>
+<li>密度直达：若$x_j$位于$x_i$的$\epsilon-领域$中，且$x_i$是核心对象，则称$x_j$由$x_i$密度直达。$\color{red}{密度直达是不满足对称性的}$</li>
+<li>密度可达：对$x_i$与$x_j$，如果存在一个样本序列$p_1,p_2,\cdots,p_n$，其中这里的$p_1 = x_i,p_n = x_j$ 且$p_{i+1}由p_i$密度直达$\color{red}{密度可达是不满足对称性的}$</li>
+<li>密度相连：对$x_i$与$x_j$，如存在$x_k$使得$x_i$与$x_j$均与$x_k$密度可达，则称$x_i$与$x_j$密度相连$\color{red}{密度相连是满足对称性的}$</li>
+</ul>
+<h5 id="过程-2"><a href="#过程-2" class="headerlink" title="过程"></a>过程</h5><p> DBSCAN算法所分出的簇C有以下的性质：</p>
+<ul>
+<li>连接性：</li>
+</ul>
+<p>$$<br>x_i \in C ,x \in C \Rightarrow x_i和x_j密度相连<br>$$</p>
+<ul>
+<li>最大性：</li>
+</ul>
+<p>$$<br>x_i \in C,x_j由x_i密度可达 \Rightarrow x_j \in C<br>$$</p>
+<p>首先任意从数据集合中挑选出一个核心对象作为一个种子，在由此出发确定聚类簇</p>
+<ol>
+<li><p>遍历数据集合，找出所有的核心对象，将这个集合称为$\Omega$ </p>
+</li>
+<li><p>假设一个集合为未访问集合为$\Gamma$ ，刚开始初始化为$\Gamma = D$</p>
+</li>
+<li><p>当$\Omega$集合不为空的时候，进行一下的操作：</p>
+<ol>
+<li>随机从$\Omega$ 挑选一个核心对象，并将这个对象从$\Gamma$ 剔除</li>
+<li>定义一个队列Q，存放某一些样本点</li>
+<li>在Q不为空的时候，从其中取出一个样本，如果他是一个核心对象，将$\Delta = N_{\epsilon} \bigcap \Gamma$放入到队列Q中，并且更新$\Gamma = \Gamma \backslash \Delta $ </li>
+</ol>
+</li>
+<li><p>当$\Omega$变为空的时候，表示当前的这一个核心对象种子，聚类簇构建完毕$C_k = \Gamma_{old} \backslash \Gamma,k++,\Omega = \Omega \backslash C_k$</p>
+<p>​</p>
+<h3 id="层次聚类"><a href="#层次聚类" class="headerlink" title="层次聚类"></a>层次聚类</h3><p>  层次聚类试图在不同层次对数据集合进行划分，有“自底向上”和“自顶向下”两种分拆策略</p>
+<h4 id="AGNES"><a href="#AGNES" class="headerlink" title="AGNES"></a>AGNES</h4><p>  这是一种采用自底向上的聚合策略的层次聚类算法</p>
+<h5 id="一些概念-1"><a href="#一些概念-1" class="headerlink" title="一些概念"></a>一些概念</h5><ul>
+<li>最小距离：</li>
+</ul>
+<p>$$<br>d_{min}(C_i,C_j) = \min \limits_{x \in C_i,z \in C_j}dist(x,z)<br>$$</p>
+<ul>
+<li>最大距离：</li>
+</ul>
+<p>$$<br>d_{max}(C_i,C_j) = \max \limits_{x \in C_i,z \in C_j}dist(x,z)<br>$$</p>
+<ul>
+<li>平均距离：</li>
+</ul>
+<p>$$<br>d_{avg}(C_i,C_j) = \frac{1}{|C_i||C_j|} \sum_{x \in C_i}\sum_{z \in C_j} dist(x,z)<br>$$</p>
+<p>​</p>
+<p>最小距离是由两个簇的最近样本决定的，最远距离是由两个簇的最远样本决定的，而平均距离是由两个簇的全部的样本所决定</p>
+</li>
+</ol>
+<h5 id="过程-3"><a href="#过程-3" class="headerlink" title="过程"></a>过程</h5><p>对于样本集合$D = {x_1,x_2,..,x_m}$</p>
+<ol>
+<li>初始化：每一个样本为一个簇</li>
+<li>计算距离矩阵</li>
+<li>设置所需的簇的数目q</li>
+<li>如果q大于当前的簇数，则进行以下的操作：<ol>
+<li>找出距离最近的两个聚类簇，进行合并</li>
+<li>合并后调整编号，重新计算<strong>距离矩阵</strong>（一般都是向前合并$C_{i<em>} = C_{i</em>}\bigcup C_{j*}$）</li>
+</ol>
+</li>
+</ol>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ML/" rel="tag">#ML</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/28/FutureSelection/" rel="prev">FutureSelection</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/10/SuppoutVectorMachine/" rel="next">SupportVectorMachine</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div>
+      
+        <style type="text/css">
+
+    .donate_bar {
+        text-align: center;
+        margin-top : 5%;
+    }
+
+    .donate_bar.hidden {
+        display:none;
+    }
+/*
+    .donate_bar a.btn_donate {
+        display: inline-block;
+        width: 82px;
+        height: 82px;
+        margin-left:auto;
+        margin-right:auto;
+
+        background: url("http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif") no-repeat;
+        _background: url("http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif") no-repeat; 
+
+        -webkit-transition: background 0s;
+        -moz-transition: background 0s;
+        -o-transition: background 0s;
+        -ms-transition: background 0s;
+        transition: background 0s;
+    }
+*/
+    .donate_bar a.btn_donate:hover { 
+        // background-position: 0px -82px;
+        color: #87daff;
+    }
+
+    .donate_bar .donate_txt {
+        display: block;
+        color: #9d9d9d;
+        font: 14px/2 "Microsoft Yahei";
+    }
+
+    .bold { 
+        font-weight: bold; 
+    }
+
+    .post-donate a {
+        border-bottom: 0px;
+    }
+
+    #donate_guide table {
+        border: none;
+    }
+
+    #donate_guide td {
+        border-bottom: none;
+        border-right: none;
+        // background: #333333;
+        valign: top;
+    }
+
+</style>
+
+
+
+    
+
+    <div class="post-donate">
+        <div id="donate_board" class="donate_bar center">
+              <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏">赏</a>
+              <span id="donate_txt" class="donate_txt">
+                   
+                        希望对你有帮助
+                   
+              </span>
+            <br>
+        </div>  
+  
+        <div id="donate_guide" class="donate_bar center hidden">
+            <!--
+            
+                <a href="http://ww4.sinaimg.cn/large/0060lm7Tly1fo6jmncxn0j30go0p0gnt.jpg" title="支付宝打赏" class="fancybox" rel="article0" 
+                    style="float:left;margin-left:25%;margin-right:10px;">
+                    <img src="http://ww4.sinaimg.cn/large/0060lm7Tly1fo6jmncxn0j30go0p0gnt.jpg" title="" height="164px" width="164px">
+                </a> 
+              
+
+            
+                <a href="http://ww4.sinaimg.cn/large/0060lm7Tly1fo6jjdysx7j30yi1au43l.jpg" title="微信打赏" class="fancybox" rel="article0"
+                    style="margin-right:30%">
+                    <img src="http://ww4.sinaimg.cn/large/0060lm7Tly1fo6jjdysx7j30yi1au43l.jpg" title="" height="164px" width="164px">
+                </a>
+            
+            -->
+            <table>
+                <tr>
+                    <td>
+                        
+                            <a href="http://ww4.sinaimg.cn/large/0060lm7Tly1fo6jmncxn0j30go0p0gnt.jpg" title="支付宝打赏" class="fancybox" rel="article0" style="float:left;margin-left:25%;margin-right:10px;">
+                                <img src="http://ww4.sinaimg.cn/large/0060lm7Tly1fo6jmncxn0j30go0p0gnt.jpg" title="" height="164px" width="164px">
+                            </a> 
+                         
+                    </td>
+                    <td>
+                        
+                            <a href="http://ww4.sinaimg.cn/large/0060lm7Tly1fo6jjdysx7j30yi1au43l.jpg" title="微信打赏" class="fancybox" rel="article0" style="margin-right:30%">
+                                <img src="http://ww4.sinaimg.cn/large/0060lm7Tly1fo6jjdysx7j30yi1au43l.jpg" title="" height="164px" width="164px">
+                            </a>
+                        
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <script type="text/javascript">
+            document.getElementById('btn_donate').onclick = function() {
+                $('#donate_board').addClass('hidden');
+                // $('#donate_guide').removeClass('hidden');
+                $('#donate_guide').show(2000);
+            }
+
+        </script>
+    </div>
+
+    
+
+
+      
+    </div>
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div id="disqus_thread">
+                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table Of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="ChangWinde" itemprop="image">
+          <p class="site-author-name" itemprop="name">ChangWinde</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">categories</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">tags</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/ChangWinde" target="_blank">GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/xxx" target="_blank">Twitter</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xxx" target="_blank">Weibo</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/ChangWinde" target="_blank">ZhiHu</a>
+              </span>
+            
+          
+        </div>
+
+        <div class="links-of-friendly motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+              <a href="http://blog.idhyt.com/about/" target="_blank">About</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#聚类任务"><span class="nav-number">1.</span> <span class="nav-text">聚类任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能度量"><span class="nav-number">2.</span> <span class="nav-text">性能度量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#外部指标度量"><span class="nav-number">2.1.</span> <span class="nav-text">外部指标度量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内部指标度量"><span class="nav-number">2.2.</span> <span class="nav-text">内部指标度量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#距离计算"><span class="nav-number">3.</span> <span class="nav-text">距离计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#有序属性"><span class="nav-number">3.1.</span> <span class="nav-text">有序属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无序属性"><span class="nav-number">3.2.</span> <span class="nav-text">无序属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型聚类"><span class="nav-number">4.</span> <span class="nav-text">原型聚类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#k均值算法"><span class="nav-number">4.1.</span> <span class="nav-text">k均值算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#内容"><span class="nav-number">4.1.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#过程"><span class="nav-number">4.1.2.</span> <span class="nav-text">过程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#学习向量量化"><span class="nav-number">4.2.</span> <span class="nav-text">学习向量量化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#内容-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#过程-1"><span class="nav-number">4.2.2.</span> <span class="nav-text">过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#密度聚类"><span class="nav-number">5.</span> <span class="nav-text">密度聚类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DBSCAN"><span class="nav-number">5.1.</span> <span class="nav-text">DBSCAN</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一些概念"><span class="nav-number">5.1.1.</span> <span class="nav-text">一些概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#过程-2"><span class="nav-number">5.1.2.</span> <span class="nav-text">过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层次聚类"><span class="nav-number">6.</span> <span class="nav-text">层次聚类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AGNES"><span class="nav-number">6.1.</span> <span class="nav-text">AGNES</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一些概念-1"><span class="nav-number">6.1.1.</span> <span class="nav-text">一些概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#过程-3"><span class="nav-number">6.1.2.</span> <span class="nav-text">过程</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright">
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2018
+  </span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ChangWinde
+  </span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme by <a class="theme-link" href="http://blog.idhyt.com">idhyt</a>.<a class="theme-link" href="https://github.com/idhyt/hexo-theme-next/tree/magiclamp">Mala</a>
+</div>
+
+<!-- busuanzi -->
+
+  <div class="">
+    <div class="theme-info">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<a class="theme-link"><span id="busuanzi_value_site_pv"></span></a>次
+    </span>
+</div>
+  </div>
+
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'xxx';
+      var disqus_identifier = '2018/02/12/Clustering/';
+      var disqus_title = 'Clustering';
+      var disqus_url = 'https://changwinde.github.io/2018/02/12/Clustering/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/themes/hexo-theme-next/source/js/love.js"></script>
+<!-- 背景动画 -->
+<script type="text/javascript" src="/themes/hexo-theme-next/source/js/particle.js"></script>
+
+</body>
+</html>
