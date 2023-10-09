@@ -1,0 +1,61 @@
+# jemdoc: {index.html}, nofooter  
+# jemdoc: addcss{config/jemdoc}
+# jemdoc: addjs{config/ga}
+==Fengshuo Bai
+
+~~~
+{}{img_left}{asserts/bio.jpg}{alt text}{160}{165}
+PhD. Student\n 
+Department of Computer Science and Engineering \n
+Shanghai Jiao Tong University \n\n
+Email: fengshuobai \[@\] sjtu \[DOT\] edu \[DOT\] cn \n
+\[[https://scholar.google.com/citations?user=rzt0quQAAAAJ&hl=en&oi=ao Google Scholar]\] \[[https://github.com/ChangWinde Github]\] 
+~~~
+
+== Biography
+I am currently a PhD. Student at [https://www.cs.sjtu.edu.cn/ Department of Computer Science and Engineering, Shanghai Jiao Tong University]
+as well as a member of [https://pair-lab.com/ PAIR-Lab], co-advised by [https://www.yangyaodong.com/ Prof. Yaodong Yang] and [https://yingwen.io/ Prof. Ying Wen].
+My research interest lies in AI Alignment and Preference-based RL.
+
+== Publications
+(* indicates equal contribution)\n
+
+- [https://arxiv.org/abs/2310.00378 Measuring Value Understanding in Language Models through Discriminator-Critique Gap] \n
+  Zhaowei Zhang,  *Fengshuo Bai*\*, Jun Gao\*, Yaodong Yang \n
+  arXiv preprint arXiv:2310.00378
+
+- [https://arxiv.org/abs/2306.03615 Zero-shot Preference Learning for Offline RL via Optimal Transport]\n
+  Runze Liu, Yali Du, *Fengshuo Bai*, Jiafei Lyu, Xiu Li \n
+  arXiv preprint arXiv:2306.03615
+
+- [https://ojs.aaai.org/index.php/AAAI/article/view/25825 PiCor: multi-task deep reinforcement learning with policy correction] \n
+  *Fengshuo Bai*, Hongming Zhang, Tianyang Tao, Zhiheng Wu, Yanna Wang, Bo Xu \n
+  Proceedings of the AAAI Conference on Artificial Intelligence, 2023
+
+- [https://proceedings.neurips.cc/paper_files/paper/2022/hash/8be9c134bb193d8bd3827d4df8488228-Abstract-Conference.html Meta-reward-net: Implicitly differentiable reward learning for preference-based reinforcement learning]\n
+  Runze Liu, *Fengshuo Bai*, Yali Du, Yaodong Yang \n
+  Conference on Neural Information Processing Systems (*NeurIPS*), 2022
+
+=== Experiences
+- Institute for AI, Peking University (Jan 2022 - Oct 2022)\n
+  Research on algorithms of Reinforcement Learning from the Human Feedback.\n
+  Supervisor: [https://yalidu.github.io/ Dr. Yali Du], [https://www.yangyaodong.com/ Dr. Yaodong Yang]
+
+- Huawei (Aug 2019 - Feb 2020)\n
+  Project on building messaging and streaming platform through the Apache Pulsar.\n
+  Supervisor: Mr. Zhengyong Zhang (Researcher Manager)
+
+=== Honors & Awards
+- Pacemaker to Merit Student, 2018.09
+- President Scholarship of Southeast University, 2018.09
+- China National Scholarship, 2017.09
+
+=== Competitions
+- Sliver Prize (25/1178), *Kaggle* Lux AI Challenge, 2021.12
+- Third Prize (Intro), 7th (Research) *NeurIPS* 2021 MineRL Diamond Competition, 2021.10
+- 14th, *IJCAI* 2020 Mahjong Artificial Intelligence Competition, 2021.01
+
+=== Services
+I was a reviewer / PC member of conferences:\n
+*DAI 2023* \n
+*AAMAS 2024* \n
