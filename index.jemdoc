@@ -19,6 +19,14 @@ My research interest lies in AI Alignment and Preference-based RL. If you would 
 
 == Publications
 (* indicates equal contribution)\n
+- [https://arxiv.org/abs/2405.18718 Efficient Model-agnostic Alignment via Bayesian Persuasion] \n
+  *Fengshuo Bai*, Mingzhi Wang, [https://zowiezhang.github.io/ Zhaowei Zhang], Boyuan Chen, Yinda Xu, [https://yingwen.io/ Prof. Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]
+  arXiv preprint arXiv:2405.18718
+
+- [https://arxiv.org/abs/2405.18688 Efficient Preference-based Reinforcement Learning via Aligned Experience Estimation] \n
+  *Fengshuo Bai*, [https://ruizhaogit.github.io/ Rui Zhao], Hongming Zhang, Sijia Cui, [https://yingwen.io/ Prof. Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang], Bo Xu, [https://www.leihan.org/ Lei Han]
+  [https://zowiezhang.github.io/ Zhaowei Zhang],  *Fengshuo Bai*\*, Jun Gao\*, [https://www.yangyaodong.com/ Yaodong Yang] \n
+  arXiv preprint arXiv:2310.00378
 
 - [https://arxiv.org/abs/2310.00378 Measuring Value Understanding in Language Models through Discriminator-Critique Gap] \n
   [https://zowiezhang.github.io/ Zhaowei Zhang],  *Fengshuo Bai*\*, Jun Gao\*, [https://www.yangyaodong.com/ Yaodong Yang] \n
