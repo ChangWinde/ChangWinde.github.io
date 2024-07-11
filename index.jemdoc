@@ -13,32 +13,32 @@ Email: fengshuobai \[@\] sjtu \[DOT\] edu \[DOT\] cn \n
 ~~~
 
 == Biography
-I am currently a PhD. Student at [https://www.cs.sjtu.edu.cn/ Department of Computer Science and Engineering, Shanghai Jiao Tong University]
+I am currently a Ph.D. Student at [https://www.cs.sjtu.edu.cn/ Department of Computer Science and Engineering, Shanghai Jiao Tong University]
 as well as a member of [https://pair-lab.com/ PAIR-Lab], co-advised by [https://www.yangyaodong.com/ Prof. Yaodong Yang] and [https://yingwen.io/ Prof. Ying Wen].
+I am also selected into Wenjun Wu Honored Ph.D. Class in 2023. 
 My research interest lies in AI Alignment and Preference-based RL. If you would like to discuss about potential collaboration or common research interests, please do not hesitate to contact me.
 
-== Publications
+== Selected Papers
 (* indicates equal contribution)\n
 - [https://arxiv.org/abs/2405.18718 Efficient Model-agnostic Alignment via Bayesian Persuasion] \n
-  *Fengshuo Bai*, Mingzhi Wang, [https://zowiezhang.github.io/ Zhaowei Zhang], Boyuan Chen, Yinda Xu, [https://yingwen.io/ Prof. Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]
+  *Fengshuo Bai*, Mingzhi Wang, [https://zowiezhang.github.io/ Zhaowei Zhang], Boyuan Chen, Yinda Xu, [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]\n
   arXiv preprint arXiv:2405.18718
 
 - [https://arxiv.org/abs/2405.18688 Efficient Preference-based Reinforcement Learning via Aligned Experience Estimation] \n
-  *Fengshuo Bai*, [https://ruizhaogit.github.io/ Rui Zhao], Hongming Zhang, Sijia Cui, [https://yingwen.io/ Prof. Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang], Bo Xu, [https://www.leihan.org/ Lei Han]
-  [https://zowiezhang.github.io/ Zhaowei Zhang],  *Fengshuo Bai*\*, Jun Gao\*, [https://www.yangyaodong.com/ Yaodong Yang] \n
+  *Fengshuo Bai*, [https://ruizhaogit.github.io/ Rui Zhao], Hongming Zhang, Sijia Cui, [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang], Bo Xu, [https://www.leihan.org/ Lei Han]\n
   arXiv preprint arXiv:2310.00378
+
+- [https://openreview.net/forum?id=0urN0PnNDj PEARL: Zero-shot Cross-task Preference Alignment and Robust Reward Learning for Robotic Manipulation]\n
+  [https://ryanliu112.github.io/ Runze Liu], [https://yalidu.github.io/ Yali Du], *Fengshuo Bai*, [https://dmksjfl.github.io/ Jiafei Lyu], Xiu Li \n
+  Conference on International Conference on Machine Learning (*ICML*), 2024 \n
 
 - [https://arxiv.org/abs/2310.00378 Measuring Value Understanding in Language Models through Discriminator-Critique Gap] \n
   [https://zowiezhang.github.io/ Zhaowei Zhang],  *Fengshuo Bai*\*, Jun Gao\*, [https://www.yangyaodong.com/ Yaodong Yang] \n
   arXiv preprint arXiv:2310.00378
 
-- [https://arxiv.org/abs/2306.03615 Zero-shot Preference Learning for Offline RL via Optimal Transport]\n
-  [https://ryanliu112.github.io/ Runze Liu], [https://yalidu.github.io/ Yali Du], *Fengshuo Bai*, [https://dmksjfl.github.io/ Jiafei Lyu], Xiu Li \n
-  arXiv preprint arXiv:2306.03615
-
 - [https://ojs.aaai.org/index.php/AAAI/article/view/25825 PiCor: multi-task deep reinforcement learning with policy correction] \n
   *Fengshuo Bai*, Hongming Zhang, Tianyang Tao, Zhiheng Wu, Yanna Wang, Bo Xu \n
-  Proceedings of the AAAI Conference on Artificial Intelligence, 2023 \n
+  Proceedings of the AAAI Conference on Artificial Intelligence (*AAAI*), 2023 \n
   \[[https://ojs.aaai.org/index.php/AAAI/article/view/25825 PDF]\]
 
 - [https://proceedings.neurips.cc/paper_files/paper/2022/hash/8be9c134bb193d8bd3827d4df8488228-Abstract-Conference.html Meta-reward-net: Implicitly differentiable reward learning for preference-based reinforcement learning]\n
@@ -64,4 +64,5 @@ My research interest lies in AI Alignment and Preference-based RL. If you would 
 === Services
 I was a reviewer / PC member of conferences:\n
 *DAI 2023* \n
-*AAMAS 2024* \n
+*AAMAS 2024, 2025* \n
+*NeurIPS 2024*
