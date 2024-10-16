@@ -4,7 +4,7 @@
 ==Fengshuo Bai
 
 ~~~
-{}{img_left}{asserts/bio.jpg}{alt text}{160}{165}
+{}{img_left}{asserts/bio.jpg}{alt text}{180}{165}
 PhD. Student\n 
 Department of Computer Science and Engineering \n
 Shanghai Jiao Tong University \n\n
@@ -16,7 +16,7 @@ Email: fengshuobai \[@\] sjtu \[DOT\] edu \[DOT\] cn \n
 I am currently a Ph.D. Student at [https://www.cs.sjtu.edu.cn/ Department of Computer Science and Engineering, Shanghai Jiao Tong University]
 as well as a member of [https://pair-lab.com/ PAIR-Lab], co-advised by [https://www.yangyaodong.com/ Prof. Yaodong Yang] and [https://yingwen.io/ Prof. Ying Wen].
 I am also selected into Wenjun Wu Honored Ph.D. Class in 2023. 
-My research interest lies in AI Alignment and Preference-based RL. If you would like to discuss about potential collaboration or common research interests, please do not hesitate to contact me.
+My research interest lies in AI Alignment, Dexterous Manipulation and Preference-based RL. If you would like to discuss about potential collaboration or common research interests, please do not hesitate to contact me.
 
 == Selected Papers
 (* indicates equal contribution)\n
@@ -63,6 +63,7 @@ My research interest lies in AI Alignment and Preference-based RL. If you would 
 
 === Services
 I was a reviewer / PC member of conferences:\n
-*DAI 2023* \n
+*DAI 2023, 2024* \n
 *AAMAS 2024, 2025* \n
-*NeurIPS 2024*
+*NeurIPS 2024* \n
+*ICLR 2025*
