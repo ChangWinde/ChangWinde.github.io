@@ -1,7 +1,8 @@
 # jemdoc: {index.html}, nofooter
-# jemdoc: addcss{config/jemdoc}
-# jemdoc: addjs{config/ga}
-# jemdoc: conf{config/coauthors.conf}
+# jemdoc: addcss{./config/jemdoc}
+# jemdoc: addjs{./config/ga}
+# jemdoc: addcss{./config/jemdoc.css}
+# jemdoc: conf{./config/coauthors.conf}
 ==Fengshuo Bai
 
 ~~~
@@ -126,5 +127,7 @@ I was a reviewer / PC member of conferences:\n
 === Visitors
 ~~~
 {}{raw}
-<script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=qVXmqI50LHdDWdRzTqaNyq8Uf3l13TYqDyI3oLM6wo4&cl=ffffff&w=a"></script>
+<div style="transform: scale(0.5); transform-origin: 50% 0; display: flex; justify-content: center; width: 100%;">
+<script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=qVXmqI50LHdDWdRzTqaNyq8Uf3l13TYqDyI3oLM6wo4&cl=ffffff&w=a&t=n"></script>
+</div>
 ~~~
