@@ -372,3 +372,25 @@ table.imgtable, table.imgtable td {
     border: none;
     text-align: left;
 }
+
+.custom-button {
+	margin: 1px;
+	height: 20px;
+	width: 48px;
+	border: 1px solid #4285f4;
+	border-radius: 3px;
+	font-size: 10px;
+	background-color: white;
+	color: #4285f4;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+  }
+  
+.custom-button:hover {
+background-color: #4285f4;
+color: white;
+}

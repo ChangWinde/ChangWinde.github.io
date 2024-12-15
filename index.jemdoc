@@ -1,6 +1,7 @@
-# jemdoc: {index.html}, nofooter  
+# jemdoc: {index.html}, nofooter
 # jemdoc: addcss{config/jemdoc}
 # jemdoc: addjs{config/ga}
+# jemdoc: conf{config/coauthors.conf}
 ==Fengshuo Bai
 
 ~~~
@@ -9,17 +10,48 @@ PhD. Student\n
 Department of Computer Science and Engineering \n
 Shanghai Jiao Tong University \n\n
 Email: fengshuobai \[@\] sjtu \[DOT\] edu \[DOT\] cn \n
-\[[https://scholar.google.com/citations?user=rzt0quQAAAAJ&hl=en&oi=ao Google Scholar]\] \[[https://github.com/ChangWinde Github]\] 
+{{
+<div style="display:flex; gap:10px; align-items:center;">
+  <a href="https://github.com/ChangWinde" target="_blank">
+    <img src="asserts/logo/github.png" alt="GitHub" style="width:27px;height:auto;border:0;">
+  </a>
+  <a href="https://scholar.google.com/citations?user=rzt0quQAAAAJ" target="_blank">
+    <img src="asserts/logo/googlescholar.png" alt="GoogleScholar" style="width:22px;height:auto;border:0;">
+  </a>
+  <a href="https://x.com/FengshuoBai" target="_blank">
+    <img src="asserts/logo/twitter.png" alt="Twitter" style="width:27px;height:auto;border:0;">
+  </a>
+</div>
+}}
 ~~~
 
 == Biography
 I am currently a Ph.D. Student at [https://www.cs.sjtu.edu.cn/ Department of Computer Science and Engineering, Shanghai Jiao Tong University]
 as well as a member of [https://pair-lab.com/ PAIR-Lab], co-advised by [https://www.yangyaodong.com/ Prof. Yaodong Yang] and [https://yingwen.io/ Prof. Ying Wen].
-I am also selected into Wenjun Wu Honored Ph.D. Class in 2023. 
+I am also selected into Wenjun Wu Honored Ph.D. Class in 2023, advised by [https://www.mvig.org Prof. Cewu Lu].
 My research interest lies in AI Alignment, Dexterous Manipulation and Preference-based RL. If you would like to discuss about potential collaboration or common research interests, please do not hesitate to contact me.
 
 == Selected Papers
 (* indicates equal contribution)\n
+- [https://arxiv.org/abs/2405.18718 RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors] \n
+  *Fengshuo Bai*, [https://ryanliu112.github.io/ Runze Liu], [https://yalidu.github.io/ Yali Du], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]\n
+  Proceedings of the AAAI Conference on Artificial Intelligence (*AAAI*), 2025 \n
+  {{
+  <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
+    <a href="paper_link" class="custom-button">
+      Paper
+    </a>
+    <a href="arxiv_link" class="custom-button">
+      ArXiv
+    </a>
+    <a href="https://sites.google.com/view/jj9uxjgmba5lr3g" class="custom-button">
+      Video
+    </a>
+    <a href="code_link" class="custom-button">
+      Code
+    </a>
+  </div>
+  }}
 - [https://arxiv.org/abs/2405.18718 Efficient Model-agnostic Alignment via Bayesian Persuasion] \n
   *Fengshuo Bai*, Mingzhi Wang, [https://zowiezhang.github.io/ Zhaowei Zhang], Boyuan Chen, Yinda Xu, [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]\n
   arXiv preprint arXiv:2405.18718
@@ -39,12 +71,33 @@ My research interest lies in AI Alignment, Dexterous Manipulation and Preference
 - [https://ojs.aaai.org/index.php/AAAI/article/view/25825 PiCor: multi-task deep reinforcement learning with policy correction] \n
   *Fengshuo Bai*, Hongming Zhang, Tianyang Tao, Zhiheng Wu, Yanna Wang, Bo Xu \n
   Proceedings of the AAAI Conference on Artificial Intelligence (*AAAI*), 2023 \n
-  \[[https://ojs.aaai.org/index.php/AAAI/article/view/25825 PDF]\]
+  {{
+  <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
+    <a href="https://ojs.aaai.org/index.php/AAAI/article/view/25825 " class="custom-button">
+      Paper
+    </a>
+  </div>
+  }}
 
-- [https://proceedings.neurips.cc/paper_files/paper/2022/hash/8be9c134bb193d8bd3827d4df8488228-Abstract-Conference.html Meta-reward-net: Implicitly differentiable reward learning for preference-based reinforcement learning]\n
+- [https://proceedings.neurips.cc/paper%5files/paper/2022/hash/8be9c134bb193d8bd3827d4df8488228-Abstract-Conference.html Meta-reward-net: Implicitly differentiable reward learning for preference-based reinforcement learning]\n
   [https://ryanliu112.github.io/ Runze Liu], *Fengshuo Bai*, [https://yalidu.github.io/ Yali Du], [https://www.yangyaodong.com/ Yaodong Yang] \n
   Conference on Neural Information Processing Systems (*NeurIPS*), 2022 \n
-  \[[https://proceedings.neurips.cc/paper_files/paper/2022/hash/8be9c134bb193d8bd3827d4df8488228-Abstract-Conference.html PDF]\] \[[https://github.com/RyanLiu112/MRN Code]\] \[[https://sites.google.com/view/meta-reward-net Website]\]
+  {{
+  <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
+    <a href="https://proceedings.neurips.cc/paper%5Ffiles/paper/2022/hash/8be9c134bb193d8bd3827d4df8488228-Abstract-Conference.html" class="custom-button">
+      Paper
+    </a>
+    <a href="https://proceedings.neurips.cc/paper%5Ffiles/paper/2022/hash/8be9c134bb193d8bd3827d4df8488228-Abstract-Conference.html" class="custom-button">
+      ArXiv
+    </a>
+    <a href="https://sites.google.com/view/meta-reward-net" class="custom-button">
+      Video
+    </a>
+    <a href="https://github.com/RyanLiu112/MRN" class="custom-button">
+      Code
+    </a>
+  </div>
+  }}
 
 === Experiences
 - Institute for AI, Peking University (Jan 2022 - Oct 2022)\n
@@ -66,4 +119,12 @@ I was a reviewer / PC member of conferences:\n
 *DAI 2023, 2024* \n
 *AAMAS 2024, 2025* \n
 *NeurIPS 2024* \n
-*ICLR 2025*
+*ICLR 2025* \n
+*AAAI 2025* \n
+*ICML 2025*
+
+=== Visitors
+~~~
+{}{raw}
+<script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=qVXmqI50LHdDWdRzTqaNyq8Uf3l13TYqDyI3oLM6wo4&cl=ffffff&w=a"></script>
+~~~
