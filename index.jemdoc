@@ -128,6 +128,6 @@ I was a reviewer / PC member of conferences:\n
 ~~~
 {}{raw}
 <div style="transform: scale(0.5); transform-origin: 50% 0; display: flex; justify-content: center; width: 100%;">
-<script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=qVXmqI50LHdDWdRzTqaNyq8Uf3l13TYqDyI3oLM6wo4&cl=ffffff&w=a&t=n"></script>
+<script type='text/javascript' id='clustrmaps' src='https://cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=qVXmqI50LHdDWdRzTqaNyq8Uf3l13TYqDyI3oLM6wo4'></script>
 </div>
 ~~~
