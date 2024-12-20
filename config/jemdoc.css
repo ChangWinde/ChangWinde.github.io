@@ -373,7 +373,7 @@ table.imgtable, table.imgtable td {
     text-align: left;
 }
 
-.custom-button {
+.activate-button {
 	margin: 1px;
 	height: 20px;
 	width: 48px;
@@ -390,7 +390,30 @@ table.imgtable, table.imgtable td {
 	text-decoration: none;
   }
   
-.custom-button:hover {
+.activate-button:hover {
 background-color: #4285f4;
 color: white;
+}
+
+.inactivate-button {
+    margin: 1px;
+    height: 20px;
+    width: 48px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    font-size: 10px;
+    background-color: #f5f5f5;
+    color: #999999;
+    cursor: not-allowed;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.inactivate-button:hover {
+    background-color: #f5f5f5;
+    color: #999999;
+    border: 1px solid #cccccc;
 }
