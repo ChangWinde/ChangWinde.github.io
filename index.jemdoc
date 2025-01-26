@@ -30,13 +30,13 @@ Email: fengshuobai \[@\] sjtu \[DOT\] edu \[DOT\] cn \n
 I am currently a Ph.D. Student at [https://www.cs.sjtu.edu.cn/ Department of Computer Science and Engineering, Shanghai Jiao Tong University]
 as well as a member of [https://pair-lab.com/ PAIR-Lab], co-advised by [https://www.yangyaodong.com/ Prof. Yaodong Yang] and [https://yingwen.io/ Prof. Ying Wen].
 I am also selected into Wenjun Wu Honored Ph.D. Class in 2023, advised by [https://www.mvig.org Prof. Cewu Lu].
-My research interest lies in AI Alignment, Dexterous Manipulation and Preference-based RL. If you would like to discuss about potential collaboration or common research interests, please do not hesitate to contact me.
+My research interest lies in Dexterous Manipulation, Preference-based RL and AI Alignment. If you would like to discuss about potential collaboration or common research interests, please do not hesitate to contact me.
 
 == Selected Papers
 (* indicates equal contribution)\n
-- β-DQN: Improving Deep Q-Learning By Evolving the Behavior \n
-  [https://github.com/initial-h Hongming Zhang], *Fengshuo Bai*, Chenjun Xiao, Chao Gao, Bo Xu, [https://webdocs.cs.ualberta.ca/~mmueller/ Martin Müller]\n
-  International Conference on Autonomous Agents and Multiagent Systems (*AAMAS*), 2025 \n
+- Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs \n
+  [https://zowiezhang.github.io/ Zhaowei Zhang]\*, *Fengshuo Bai*\*, Qizhi Chen, Chengdong Ma, Mingzhi Wang, Haoran Sun, Zilong Zheng, [https://www.yangyaodong.com/ Yaodong Yang] \n
+  International Conference on Learning Representations (*ICLR*), 2025 \n
   {{
   <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
     <a href="paper_link" class="inactivate-button">
@@ -53,7 +53,29 @@ My research interest lies in AI Alignment, Dexterous Manipulation and Preference
     </a>
   </div>
   }}
-- [https://arxiv.org/abs/2405.18718 RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors] \n
+- GRAIT: Gradient-Driven Refusal-Aware Instruction Tuning for Effective Hallucination Mitigation \n
+  Runchuan Zhu, Xinke Jiang, Jiang Wu, Zhipeng ma, Jiahe Song, *Fengshuo Bai*, Dahua Lin, Lijun Wu, Conghui He \n
+  Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics (*NAACL*), 2025
+- β-DQN: Improving Deep Q-Learning By Evolving the Behavior \n
+  [https://github.com/initial-h Hongming Zhang], *Fengshuo Bai*, Chenjun Xiao, Chao Gao, Bo Xu, [https://webdocs.cs.ualberta.ca/~mmueller/ Martin Müller]\n
+  International Conference on Autonomous Agents and Multiagent Systems (*AAMAS*), 2025 \n
+  {{
+  <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
+    <a href="paper_link" class="inactivate-button">
+      Paper
+    </a>
+    <a href="https://arxiv.org/abs/2501.00913" class="activate-button">
+      ArXiv
+    </a>
+    <a href="video_link" class="inactivate-button">
+      Video
+    </a>
+    <a href="code_link" class="inactivate-button">
+      Code
+    </a>
+  </div>
+  }}
+- [https://arxiv.org/abs/2405.18718 RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors] {{<span class="oral-tag">Oral</span>}}\n
   *Fengshuo Bai*, [https://ryanliu112.github.io/ Runze Liu], [https://yalidu.github.io/ Yali Du], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]\n
   Proceedings of the AAAI Conference on Artificial Intelligence (*AAAI*), 2025 \n
   {{
@@ -92,7 +114,7 @@ My research interest lies in AI Alignment, Dexterous Manipulation and Preference
   }}
 
 - [https://arxiv.org/abs/2405.18688 Efficient Preference-based Reinforcement Learning via Aligned Experience Estimation] \n
-  *Fengshuo Bai*, [https://ruizhaogit.github.io/ Rui Zhao], Hongming Zhang, Sijia Cui, [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang], Bo Xu, [https://www.leihan.org/ Lei Han]\n
+  *Fengshuo Bai*, [https://ruizhaogit.github.io/ Rui Zhao], [https://github.com/initial-h Hongming Zhang], Sijia Cui, [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang], Bo Xu, [https://www.leihan.org/ Lei Han]\n
   {{
     <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
       <a href="paper_link" class="inactivate-button">
@@ -150,7 +172,7 @@ My research interest lies in AI Alignment, Dexterous Manipulation and Preference
   }}
 
 - [https://ojs.aaai.org/index.php/AAAI/article/view/25825 PiCor: multi-task deep reinforcement learning with policy correction] \n
-  *Fengshuo Bai*, Hongming Zhang, Tianyang Tao, Zhiheng Wu, Yanna Wang, Bo Xu \n
+  *Fengshuo Bai*, [https://github.com/initial-h Hongming Zhang], Tianyang Tao, Zhiheng Wu, Yanna Wang, Bo Xu \n
   Proceedings of the AAAI Conference on Artificial Intelligence (*AAAI*), 2023 \n
   {{
     <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
