@@ -2,7 +2,6 @@
 # jemdoc: addcss{./config/jemdoc}
 # jemdoc: addjs{./config/ga}
 # jemdoc: addcss{./config/jemdoc.css}
-# jemdoc: conf{./config/coauthors.conf}
 ==Fengshuo Bai
 
 ~~~
@@ -108,7 +107,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
         Video
       </a>
       <a href="code_link" class="inactivate-button">
-        code
+        Code
       </a>
     </div>
   }}
@@ -127,7 +126,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
         Video
       </a>
       <a href="code_link" class="inactivate-button">
-        code
+        Code
       </a>
     </div>
   }}
@@ -147,7 +146,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
         Video
       </a>
       <a href="code_link" class="inactivate-button">
-        code
+        Code
       </a>
     </div>
   }}
@@ -166,7 +165,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
         Video
       </a>
       <a href="code_link" class="inactivate-button">
-        code
+        Code
       </a>
     </div>
   }}
@@ -186,7 +185,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
         Video
       </a>
       <a href="https://github.com/ChangWinde/PiCor" class="activate-button">
-        code
+        Code
       </a>
     </div>
   }}
@@ -233,12 +232,13 @@ I was a reviewer / PC member of conferences:\n
 *NeurIPS 2024* \n
 *ICLR 2025* \n
 *AAAI 2025* \n
-*ICML 2025*
+*ICML 2025* \n
+*IJCAI 2025* 
 
 === Visitors
 ~~~
 {}{raw}
-<div style="transform: scale(0.9); transform-origin: 50% 0; display: flex; justify-content: center; width: 100%;">
+<div style="transform: scale(1.0); transform-origin: 90% 0; display: flex; justify-content: center; width: 100%;">
 <script type='text/javascript' id='clustrmaps' src='https://cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=qVXmqI50LHdDWdRzTqaNyq8Uf3l13TYqDyI3oLM6wo4'></script>
 </div>
 ~~~
