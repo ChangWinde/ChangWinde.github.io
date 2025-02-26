@@ -33,15 +33,52 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
 
 == Selected Papers
 (* indicates equal contribution)\n
-- Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs \n
+- [https://arxiv.org/abs/2502.18423 Retrieval Dexterity: Efficient Object Retrieval in Clutters with Dexterous Hand] \n
+  Fengshuo Bai, [https://github.com/Student-of-Holmes Yu Li], [https://bxzzcj.github.io/ Jie Chu], [https://openreview.net/profile?id=~Tawei_Chou1 Tawei Chou], [https://github.com/Zrc007 Runchuan Zhu], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang], [https://cypypccpy.github.io/ Yuanpei Chen]
+  {{
+  <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
+    <a href="https://arxiv.org/abs/2502.18423" class="activate-button">
+      Paper
+    </a>
+    <a href="https://arxiv.org/abs/2502.18423" class="activate-button">
+      ArXiv
+    </a>
+    <a href="https://changwinde.github.io/RetrDex/" class="activate-button">
+      Video
+    </a>
+    <a href="code_link" class="inactivate-button">
+      Code
+    </a>
+  </div>
+  }}
+- [https://openreview.net/forum?id=f9w89OY2cp Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs] \n
   [https://zowiezhang.github.io/ Zhaowei Zhang]\*, *Fengshuo Bai*\*, Qizhi Chen, Chengdong Ma, Mingzhi Wang, Haoran Sun, Zilong Zheng, [https://www.yangyaodong.com/ Yaodong Yang] \n
   International Conference on Learning Representations (*ICLR*), 2025 \n
   {{
   <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
-    <a href="paper_link" class="inactivate-button">
+    <a href="https://openreview.net/forum?id=f9w89OY2cp" class="activate-button">
       Paper
     </a>
     <a href="arxiv_link" class="inactivate-button">
+      ArXiv
+    </a>
+    <a href="https://zowiezhang.github.io/projects/Amulet/" class="activate-button">
+      Video
+    </a>
+    <a href="https://github.com/zowiezhang/Amulet" class="activate-button">
+      Code
+    </a>
+  </div>
+  }}
+- [https://arxiv.org/abs/2502.05911 GRAIT: Gradient-Driven Refusal-Aware Instruction Tuning for Effective Hallucination Mitigation] \n
+  [https://github.com/Zrc007 Runchuan Zhu], Xinke Jiang, Jiang Wu, Zhipeng ma, Jiahe Song, *Fengshuo Bai*, Dahua Lin, Lijun Wu, Conghui He \n
+  Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics (*NAACL*), 2025
+  {{
+  <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
+    <a href="https://arxiv.org/abs/2502.05911" class="activate-button">
+      Paper
+    </a>
+    <a href="https://arxiv.org/abs/2502.05911" class="activate-button">
       ArXiv
     </a>
     <a href="video_link" class="inactivate-button">
@@ -52,10 +89,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
     </a>
   </div>
   }}
-- GRAIT: Gradient-Driven Refusal-Aware Instruction Tuning for Effective Hallucination Mitigation \n
-  Runchuan Zhu, Xinke Jiang, Jiang Wu, Zhipeng ma, Jiahe Song, *Fengshuo Bai*, Dahua Lin, Lijun Wu, Conghui He \n
-  Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics (*NAACL*), 2025
-- β-DQN: Improving Deep Q-Learning By Evolving the Behavior \n
+- [https://arxiv.org/abs/2501.00913 β-DQN: Improving Deep Q-Learning By Evolving the Behavior] \n
   [https://github.com/initial-h Hongming Zhang], *Fengshuo Bai*, Chenjun Xiao, Chao Gao, Bo Xu, [https://webdocs.cs.ualberta.ca/~mmueller/ Martin Müller]\n
   International Conference on Autonomous Agents and Multiagent Systems (*AAMAS*), 2025 \n
   {{
@@ -229,7 +263,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
 I was a reviewer / PC member of conferences:\n
 *DAI 2023, 2024* \n
 *AAMAS 2024, 2025* \n
-*NeurIPS 2024* \n
+*NeurIPS 2024, 2025* \n
 *ICLR 2025* \n
 *AAAI 2025* \n
 *ICML 2025* \n
