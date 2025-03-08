@@ -34,7 +34,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
 == Selected Papers
 (* indicates equal contribution)\n
 - [https://arxiv.org/abs/2502.18423 Retrieval Dexterity: Efficient Object Retrieval in Clutters with Dexterous Hand] \n
-  Fengshuo Bai, [https://github.com/Student-of-Holmes Yu Li], [https://bxzzcj.github.io/ Jie Chu], [https://openreview.net/profile?id=~Tawei_Chou1 Tawei Chou], [https://github.com/Zrc007 Runchuan Zhu], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang], [https://cypypccpy.github.io/ Yuanpei Chen]
+  *Fengshuo Bai*, [https://github.com/Student-of-Holmes Yu Li], [https://bxzzcj.github.io/ Jie Chu], [https://openreview.net/profile?id=~Tawei_Chou1 Tawei Chou], [https://github.com/Zrc007 Runchuan Zhu], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang], [https://cypypccpy.github.io/ Yuanpei Chen]
   {{
   <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
     <a href="https://arxiv.org/abs/2502.18423" class="activate-button">
@@ -52,14 +52,14 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
   </div>
   }}
 - [https://openreview.net/forum?id=f9w89OY2cp Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs] \n
-  [https://zowiezhang.github.io/ Zhaowei Zhang]\*, *Fengshuo Bai*\*, Qizhi Chen, Chengdong Ma, Mingzhi Wang, Haoran Sun, Zilong Zheng, [https://www.yangyaodong.com/ Yaodong Yang] \n
+  [https://zowiezhang.github.io/ Zhaowei Zhang]\*, *Fengshuo Bai*\*, Qizhi Chen, [https://cdm1619.github.io/ Chengdong Ma], [https://github.com/ErlebnisW Mingzhi Wang], Haoran Sun, [https://zilongzheng.github.io/ Zilong Zheng], [https://www.yangyaodong.com/ Yaodong Yang] \n
   International Conference on Learning Representations (*ICLR*), 2025 \n
   {{
   <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
     <a href="https://openreview.net/forum?id=f9w89OY2cp" class="activate-button">
       Paper
     </a>
-    <a href="arxiv_link" class="inactivate-button">
+    <a href="https://arxiv.org/abs/2502.19148" class="activate-button">
       ArXiv
     </a>
     <a href="https://zowiezhang.github.io/projects/Amulet/" class="activate-button">
@@ -128,7 +128,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
   </div>
   }}
 - [https://arxiv.org/abs/2405.18718 Efficient Model-agnostic Alignment via Bayesian Persuasion] \n
-  *Fengshuo Bai*, Mingzhi Wang, [https://zowiezhang.github.io/ Zhaowei Zhang], Boyuan Chen, Yinda Xu, [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]\n
+  *Fengshuo Bai*, [https://github.com/ErlebnisW Mingzhi Wang], [https://zowiezhang.github.io/ Zhaowei Zhang], [https://cby-pku.github.io/ Boyuan Chen], [https://marmotatzju.github.io/ Yinda Xu], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]\n
   {{
     <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
       <a href="paper_link" class="inactivate-button">
