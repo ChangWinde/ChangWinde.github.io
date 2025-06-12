@@ -31,8 +31,25 @@ as well as a member of [https://pair-lab.com/ PAIR-Lab], co-advised by [https://
 I am also selected into Wenjun Wu Honored Ph.D. Class in 2023, advised by [https://www.mvig.org Prof. Cewu Lu].
 My research interest lies in Dexterous Manipulation, Preference-based RL and AI Alignment. If you would like to discuss about potential collaboration or common research interests, please do not hesitate to contact me.
 
+== News 🔥
+📢 2025.6 Our paper has been accepted for oral presentation at the Artificial General Intelligence Conference (AGI-25)!
+
 == Selected Papers
 (* indicates equal contribution)\n
+- [https://arxiv.org/abs/2402.12907 Roadmap on Incentive Compatibility for Al Alignmentand Governance in Sociotechnical Systems] {{<span class="oral-tag">Oral</span>}}\n
+  [https://zowiezhang.github.io/ Zhaowei Zhang], *Fengshuo Bai*, [https://github.com/ErlebnisW Mingzhi Wang], Haoyang Ye, [https://cdm1619.github.io/ Chengdong Ma], [https://www.yangyaodong.com/ Yaodong Yang] \n
+  Artificial General Intelligence Conference (*AGI*), 2025 \n
+  {{
+  <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
+    <a href="https://arxiv.org/abs/2402.12907" class="activate-button">
+      Paper
+    </a>
+    <a href="https://arxiv.org/abs/2402.12907" class="activate-button">
+      ArXiv
+    </a>
+  </div>
+  }}
+
 - [https://arxiv.org/abs/2502.18423 Retrieval Dexterity: Efficient Object Retrieval in Clutters with Dexterous Hand] \n
   *Fengshuo Bai*, [https://github.com/Student-of-Holmes Yu Li], [https://bxzzcj.github.io/ Jie Chu], [https://openreview.net/profile?id=~Tawei_Chou1 Tawei Chou], [https://github.com/Zrc007 Runchuan Zhu], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang], [https://cypypccpy.github.io/ Yuanpei Chen]
   {{
@@ -51,6 +68,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
     </a>
   </div>
   }}
+
 - [https://openreview.net/forum?id=f9w89OY2cp Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs] \n
   [https://zowiezhang.github.io/ Zhaowei Zhang]\*, *Fengshuo Bai*\*, Qizhi Chen, [https://cdm1619.github.io/ Chengdong Ma], [https://github.com/ErlebnisW Mingzhi Wang], Haoran Sun, [https://zilongzheng.github.io/ Zilong Zheng], [https://www.yangyaodong.com/ Yaodong Yang] \n
   International Conference on Learning Representations (*ICLR*), 2025 \n
@@ -70,6 +88,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
     </a>
   </div>
   }}
+
 - [https://arxiv.org/abs/2502.05911 GRAIT: Gradient-Driven Refusal-Aware Instruction Tuning for Effective Hallucination Mitigation] \n
   [https://github.com/Zrc007 Runchuan Zhu], Xinke Jiang, Jiang Wu, Zhipeng ma, Jiahe Song, *Fengshuo Bai*, Dahua Lin, Lijun Wu, Conghui He \n
   Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics (*NAACL*), 2025
@@ -89,6 +108,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
     </a>
   </div>
   }}
+
 - [https://arxiv.org/abs/2501.00913 β-DQN: Improving Deep Q-Learning By Evolving the Behavior] {{<span class="oral-tag">Oral</span>}}\n
   [https://github.com/initial-h Hongming Zhang], *Fengshuo Bai*, Chenjun Xiao, Chao Gao, Bo Xu, [https://webdocs.cs.ualberta.ca/~mmueller/ Martin Müller]\n
   International Conference on Autonomous Agents and Multiagent Systems (*AAMAS*), 2025 \n
@@ -108,6 +128,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
     </a>
   </div>
   }}
+
 - [https://arxiv.org/abs/2405.18718 RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors] {{<span class="oral-tag">Oral</span>}}\n
   *Fengshuo Bai*, [https://ryanliu112.github.io/ Runze Liu], [https://yalidu.github.io/ Yali Du], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]\n
   Proceedings of the AAAI Conference on Artificial Intelligence (*AAAI*), 2025 \n
@@ -127,6 +148,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
     </a>
   </div>
   }}
+
 - [https://arxiv.org/abs/2405.18718 Efficient Model-agnostic Alignment via Bayesian Persuasion] \n
   *Fengshuo Bai*, [https://github.com/ErlebnisW Mingzhi Wang], [https://zowiezhang.github.io/ Zhaowei Zhang], [https://cby-pku.github.io/ Boyuan Chen], [https://marmotatzju.github.io/ Yinda Xu], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]\n
   {{
@@ -256,7 +278,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
 
 === Competitions
 - Sliver Prize (25/1178), *Kaggle* Lux AI Challenge, 2021.12
-- Third Prize (Intro), 7th (Research) *NeurIPS* 2021 MineRL Diamond Competition, 2021.10
+- Third (Intro), 7th (Research) *NeurIPS* 2021 MineRL Diamond Competition, 2021.10
 - 14th, *IJCAI* 2020 Mahjong Artificial Intelligence Competition, 2021.01
 
 === Services
