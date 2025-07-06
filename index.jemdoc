@@ -32,10 +32,30 @@ I am also selected into Wenjun Wu Honored Ph.D. Class in 2023, advised by [https
 My research interest lies in Dexterous Manipulation, Preference-based RL and AI Alignment. If you would like to discuss about potential collaboration or common research interests, please do not hesitate to contact me.
 
 == News 🔥
+📢 2025.7 We have released our VLA survey titled “A Survey on Vision-Language-Action Models: An Action Tokenization Perspective.” \n
 📢 2025.6 Our paper has been accepted for oral presentation at the Artificial General Intelligence Conference (AGI-25)!
 
 == Selected Papers
 (* indicates equal contribution)\n
+- [https://arxiv.org/abs/2507.01925 A Survey on Vision-Language-Action Models: An Action Tokenization Perspective] \n
+  Yifan Zhong\*, *Fengshuo Bai*\*, Shaofei Cai, Xuchuan Huang, Zhang Chen, Xiaowei Zhang, Yuanfei Wang, Shaoyang Guo, Tianrui Guan, Ka Nam Lui, Zhiquan Qi, Yitao Liang, [https://cypypccpy.github.io/ Yuanpei Chen], [https://www.yangyaodong.com/ Yaodong Yang]
+  {{
+  <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
+    <a href="https://arxiv.org/abs/2507.01925" class="activate-button">
+      Paper
+    </a>
+    <a href="https://arxiv.org/abs/2507.01925" class="activate-button">
+      ArXiv
+    </a>
+    <a href="https://huggingface.co/papers/2507.01925" class="activate-button">
+      HF
+    </a>
+    <a href="https://github.com/Psi-Robot/Awesome-VLA-Papers" class="activate-button">
+      Github
+    </a>
+  </div>
+  }}
+
 - [https://arxiv.org/abs/2402.12907 Roadmap on Incentive Compatibility for Al Alignmentand Governance in Sociotechnical Systems] {{<span class="oral-tag">Oral</span>}}\n
   [https://zowiezhang.github.io/ Zhaowei Zhang], *Fengshuo Bai*, [https://github.com/ErlebnisW Mingzhi Wang], Haoyang Ye, [https://cdm1619.github.io/ Chengdong Ma], [https://www.yangyaodong.com/ Yaodong Yang] \n
   Artificial General Intelligence Conference (*AGI*), 2025 \n
@@ -109,12 +129,12 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
   </div>
   }}
 
-- [https://arxiv.org/abs/2501.00913 β-DQN: Improving Deep Q-Learning By Evolving the Behavior] {{<span class="oral-tag">Oral</span>}}\n
+- [https://dl.acm.org/doi/10.5555/3709347.3743872 β-DQN: Improving Deep Q-Learning By Evolving the Behavior] {{<span class="oral-tag">Oral</span>}}\n
   [https://github.com/initial-h Hongming Zhang], *Fengshuo Bai*, Chenjun Xiao, Chao Gao, Bo Xu, [https://webdocs.cs.ualberta.ca/~mmueller/ Martin Müller]\n
   International Conference on Autonomous Agents and Multiagent Systems (*AAMAS*), 2025 \n
   {{
   <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
-    <a href="paper_link" class="inactivate-button">
+    <a href="https://dl.acm.org/doi/10.5555/3709347.3743872" class="activate-button">
       Paper
     </a>
     <a href="https://arxiv.org/abs/2501.00913" class="activate-button">
@@ -129,12 +149,12 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
   </div>
   }}
 
-- [https://arxiv.org/abs/2405.18718 RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors] {{<span class="oral-tag">Oral</span>}}\n
+- [https://ojs.aaai.org/index.php/AAAI/article/view/33696 RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors] {{<span class="oral-tag">Oral</span>}}\n
   *Fengshuo Bai*, [https://ryanliu112.github.io/ Runze Liu], [https://yalidu.github.io/ Yali Du], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]\n
   Proceedings of the AAAI Conference on Artificial Intelligence (*AAAI*), 2025 \n
   {{
   <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
-    <a href="paper_link" class="activate-button">
+    <a href="https://ojs.aaai.org/index.php/AAAI/article/view/33696" class="activate-button">
       Paper
     </a>
     <a href="https://arxiv.org/abs/2412.10713" class="activate-button">
