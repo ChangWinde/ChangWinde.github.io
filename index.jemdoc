@@ -109,22 +109,16 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
   </div>
   }}
 
-- [https://arxiv.org/abs/2502.05911 GRAIT: Gradient-Driven Refusal-Aware Instruction Tuning for Effective Hallucination Mitigation] \n
+- [https://aclanthology.org/2025.findings-naacl.223/ GRAIT: Gradient-Driven Refusal-Aware Instruction Tuning for Effective Hallucination Mitigation] \n
   [https://github.com/Zrc007 Runchuan Zhu], Xinke Jiang, Jiang Wu, Zhipeng ma, Jiahe Song, *Fengshuo Bai*, Dahua Lin, Lijun Wu, Conghui He \n
   Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics (*NAACL*), 2025
   {{
   <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
-    <a href="https://arxiv.org/abs/2502.05911" class="activate-button">
+    <a href="https://aclanthology.org/2025.findings-naacl.223/" class="activate-button">
       Paper
     </a>
     <a href="https://arxiv.org/abs/2502.05911" class="activate-button">
       ArXiv
-    </a>
-    <a href="video_link" class="inactivate-button">
-      Video
-    </a>
-    <a href="code_link" class="inactivate-button">
-      Code
     </a>
   </div>
   }}
@@ -221,9 +215,6 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
       <a href="https://sites.google.com/view/pearl-preference" class="activate-button">
         Video
       </a>
-      <a href="code_link" class="inactivate-button">
-        Code
-      </a>
     </div>
   }}
 
@@ -254,12 +245,6 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
       <a href="https://ojs.aaai.org/index.php/AAAI/article/view/25825" class="activate-button">
         Paper
       </a>
-      <a href="arxiv_link" class="inactivate-button">
-          ArXiv
-      </a>
-      <a href="video_link" class="inactivate-button">
-        Video
-      </a>
       <a href="https://github.com/ChangWinde/PiCor" class="activate-button">
         Code
       </a>
@@ -273,9 +258,6 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
   <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
     <a href="https://proceedings.neurips.cc/paper%5Ffiles/paper/2022/hash/8be9c134bb193d8bd3827d4df8488228-Abstract-Conference.html" class="activate-button">
       Paper
-    </a>
-    <a href="arxiv_link" class="inactivate-button">
-      ArXiv
     </a>
     <a href="https://sites.google.com/view/meta-reward-net" class="activate-button">
       Video
