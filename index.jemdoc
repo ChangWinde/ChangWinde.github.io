@@ -32,14 +32,53 @@ I am also selected into Wenjun Wu Honored Ph.D. Class in 2023, advised by [https
 My research interest lies in Dexterous Manipulation, Preference-based RL and AI Alignment. If you would like to discuss about potential collaboration or common research interests, please do not hesitate to contact me.
 
 == News 🔥
-📢 2025.8 Our paper has been accepted at Conference on Empirical Methods in Natural Language Processing (EMNLP-25)! \n
+📢 2025.9 Two papers were accepted to NeurIPS'25, with one selected as Spotlight!\n
+📢 2025.8 Our paper has been accepted at Conference on Empirical Methods in Natural Language Processing (EMNLP'25)! \n
 📢 2025.7 We have released our VLA survey titled “A Survey on Vision-Language-Action Models: An Action Tokenization Perspective.” \n
-📢 2025.6 Our paper has been accepted for oral presentation at the Artificial General Intelligence Conference (AGI-25)!
+📢 2025.6 Our paper has been accepted for oral presentation at the Artificial General Intelligence Conference (AGI'25)!
 
 == Selected Papers
 (* indicates equal contribution)\n
+- [https://arxiv.org/abs/2405.18688 STAR: Efficient Preference-based Reinforcement Learning via Dual Regularization] \n
+  *Fengshuo Bai*, [https://ruizhaogit.github.io/ Rui Zhao], [https://github.com/initial-h Hongming Zhang], Sijia Cui, [https://shaozhang.info/ Shao Zhang], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang], Bo Xu, [https://www.leihan.org/ Lei Han]\n
+  Conference on Neural Information Processing Systems (*NeurIPS*), 2025\n
+  {{
+    <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
+      <a href="https://arxiv.org/abs/2405.18688" class="activate-button">
+        Paper
+      </a>
+      <a href="https://arxiv.org/abs/2405.18688" class="activate-button">
+        ArXiv
+      </a>
+      <a href="https://sites.google.com/view/pbrl-star" class="activate-button">
+        Video
+      </a>
+      <a href="code_link" class="inactivate-button">
+        Code
+      </a>
+    </div>
+  }}
+- [DexFlyWheel: A Scalable and Self-improving Data Generation Framework for Dexterous Manipulation] {{<span class="spotlight-tag">Spotlight</span>}}\n
+  Kefei Zhu, *Fengshuo Bai* , YuanHao Xiang, Yishuai Cai, Xinglin Chen, Ruochong Li, Xingtao Wang, [https://www.yangyaodong.com/ Yaodong Yang], [https://zsdonghao.github.io/ Hao Dong], Xiaopeng Fan, [https://cypypccpy.github.io/ Yuanpei Chen]\n
+  Conference on Neural Information Processing Systems (*NeurIPS*), 2025\n
+  {{
+    <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
+      <a href="paper_link" class="inactivate-button">
+        Paper
+      </a>
+      <a href="https://arxiv.org/abs/2405.18688" class="inactivate-button">
+        ArXiv
+      </a>
+      <a href="https://sites.google.com/view/pbrl-star" class="inactivate-button">
+        Video
+      </a>
+      <a href="code_link" class="inactivate-button">
+        Code
+      </a>
+    </div>
+  }}
 - [https://arxiv.org/abs/2508.08053 AdaptFlow: Adaptive Workflow Optimization via Meta-Learning]\n
-  [https://github.com/Zrc007 Runchuan Zhu], Bowen Jiang, Lingrui Mei, Fangkai Yang, Lu Wang, Haoxiang Gao, Fengshuo Bai, Pu Zhao, Qingwei Lin, Saravan Rajmohan, Dongmei Zhang\n
+  [https://github.com/Zrc007 Runchuan Zhu], Bowen Jiang, Lingrui Mei, Fangkai Yang, Lu Wang, Haoxiang Gao, *Fengshuo Bai*, Pu Zhao, Qingwei Lin, Saravan Rajmohan, Dongmei Zhang\n
   Conference on Empirical Methods in Natural Language Processing (*EMNLP*), 2025
   {{
   <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
@@ -51,6 +90,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
     </a>
   </div>
   }}
+
 - [https://arxiv.org/abs/2507.01925 A Survey on Vision-Language-Action Models: An Action Tokenization Perspective] \n
   Yifan Zhong\*, *Fengshuo Bai*\*, Shaofei Cai, Xuchuan Huang, Zhang Chen, Xiaowei Zhang, Yuanfei Wang, Shaoyang Guo, Tianrui Guan, Ka Nam Lui, Zhiquan Qi, Yitao Liang, [https://cypypccpy.github.io/ Yuanpei Chen], [https://www.yangyaodong.com/ Yaodong Yang]
   {{
@@ -182,25 +222,6 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
         ArXiv
       </a>
       <a href="https://sites.google.com/view/llm-persuader" class="activate-button">
-        Video
-      </a>
-      <a href="code_link" class="inactivate-button">
-        Code
-      </a>
-    </div>
-  }}
-
-- [https://arxiv.org/abs/2405.18688 Efficient Preference-based Reinforcement Learning via Aligned Experience Estimation] \n
-  *Fengshuo Bai*, [https://ruizhaogit.github.io/ Rui Zhao], [https://github.com/initial-h Hongming Zhang], Sijia Cui, [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang], Bo Xu, [https://www.leihan.org/ Lei Han]\n
-  {{
-    <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
-      <a href="paper_link" class="inactivate-button">
-        Paper
-      </a>
-      <a href="https://arxiv.org/abs/2405.18688" class="activate-button">
-        ArXiv
-      </a>
-      <a href="https://sites.google.com/view/pbrl-star" class="activate-button">
         Video
       </a>
       <a href="code_link" class="inactivate-button">
