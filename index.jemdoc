@@ -32,6 +32,7 @@ I am also selected into Wen-Tsun Wu AI Honorary Doctoral Class in 2023, advised 
 My research interest lies in Dexterous Manipulation, Preference-based RL and AI Alignment. If you would like to discuss about potential collaboration or common research interests, please do not hesitate to contact me.
 
 == News 🔥
+📢 2026.1 Our paper, "PoliCon: Evaluating LLMs on Achieving Diverse Political Consensus Objectives (ICLR'26).\n
 📢 2025.9 Our paper, "ValueDCG," has been accepted to the NeurIPS 2025 Workshop on Regulatable ML (RegML).\n
 📢 2025.9 Two papers were accepted to NeurIPS'25, with one selected as Spotlight!\n
 📢 2025.8 Our paper has been accepted at Conference on Empirical Methods in Natural Language Processing (EMNLP'25)! \n
@@ -40,6 +41,26 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
 
 == Selected Papers
 (* indicates equal contribution)\n
+- [https://openreview.net/forum?id=MHlwNs9k1Y PoliCon: Evaluating LLMs on Achieving Diverse Political Consensus Objectives] \n
+  [https://zowiezhang.github.io/ Zhaowei Zhang], Xiaobo Wang, Minghua Yi, Mengmeng Wang, *Fengshuo Bai*, [https://zilongzheng.github.io/ Zilong Zheng], Yipeng Kang, [https://www.yangyaodong.com/ Yaodong Yang] \n
+  International Conference on Learning Representations (*ICLR*), 2026 \n
+  {{
+  <div style="display:flex; gap:4px; margin-left:40px;; margin-top:-10px;">
+    <a href="https://openreview.net/forum?id=MHlwNs9k1Y" class="activate-button">
+      Paper
+    </a>
+    <a href="https://arxiv.org/abs/2505.19558" class="activate-button">
+      ArXiv
+    </a>
+    <a href="https://www.zhangzhaowei.me/projects/PoliCon/" class="activate-button">
+      Website
+    </a>
+    <a href="" class="inactivate-button">
+      Code
+    </a>
+  </div>
+  }}
+
 - [https://arxiv.org/abs/2405.18688 STAR: Efficient Preference-based Reinforcement Learning via Dual Regularization] \n
   *Fengshuo Bai*, [https://ruizhaogit.github.io/ Rui Zhao], [https://github.com/initial-h Hongming Zhang], Sijia Cui, [https://shaozhang.info/ Shao Zhang], Bo Xu, [https://www.leihan.org/ Lei Han], [https://yingwen.io/ Ying Wen], [https://www.yangyaodong.com/ Yaodong Yang]\n
   Conference on Neural Information Processing Systems (*NeurIPS*), 2025\n
@@ -107,8 +128,7 @@ My research interest lies in Dexterous Manipulation, Preference-based RL and AI 
     </a>
   </div>
   }}
- 
- 
+  
 - [https://arxiv.org/abs/2507.01925 A Survey on Vision-Language-Action Models: An Action Tokenization Perspective] \n
   Yifan Zhong\*, *Fengshuo Bai*\*, Shaofei Cai, Xuchuan Huang, Zhang Chen, Xiaowei Zhang, Yuanfei Wang, Shaoyang Guo, Tianrui Guan, Ka Nam Lui, Zhiquan Qi, Yitao Liang, [https://cypypccpy.github.io/ Yuanpei Chen], [https://www.yangyaodong.com/ Yaodong Yang]
   {{
