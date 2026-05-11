@@ -147,6 +147,10 @@
 {}{raw}
 <div class="news-stream">
   <div class="news-item">
+    <span class="news-date">2026.04</span>
+    <span class="news-text">SafeLab was accepted to ICML 2026.</span>
+  </div>
+  <div class="news-item">
     <span class="news-date">2026.01</span>
     <span class="news-text">PoliCon was accepted to ICLR 2026.</span>
   </div>
@@ -181,6 +185,17 @@
 <!-- ── Featured publications (1st / 2nd / 3rd author) ── -->
 <div class="pub-list" id="pub-featured">
   <p class="pub-year-group">2025 &ndash; 2026</p>
+  <div class="pub-item">
+    <div class="pub-head">
+      <a class="pub-title" href="https://icml.cc/virtual/2026/poster/61584" target="_blank" rel="noopener noreferrer">SafeLab: An Interactive High-Fidelity Benchmark for Embodied Safety in Scientific Robotics</a>
+    </div>
+    <p class="pub-authors"><strong>Fengshuo Bai</strong>, Yufeng Li, <a href="https://warshallrho.github.io/">Ruihai Wu</a>, Peishuo Wang, Yuhan Wang, <a href="https://berniezhu.github.io/">Bernie Hao Zhu</a>, <a href="https://yuanfei-wang.github.io/">Yuanfei Wang</a>, <a href="https://openreview.net/profile?id=~Tawei_Chou1">Tawei Chou</a>, Jing Gao, <a href="https://github.com/Zrc007">Runchuan Zhu</a>, <a href="https://yingwen.io/">Ying Wen</a>, <a href="https://www.yangyaodong.com/">Yaodong Yang</a>, <a href="https://cypypccpy.github.io/">Yuanpei Chen</a></p>
+    <p class="pub-venue">International Conference on Machine Learning (ICML), 2026</p>
+    <div class="pub-links">
+      <a class="pub-link" href="https://icml.cc/virtual/2026/poster/61584" target="_blank" rel="noopener noreferrer">Paper</a>
+    </div>
+  </div>
+
   <div class="pub-item">
     <div class="pub-head">
       <a class="pub-title" href="https://arxiv.org/abs/2405.18688" target="_blank" rel="noopener noreferrer">STAR: Efficient Preference-based Reinforcement Learning via Dual Regularization</a>
