@@ -41,7 +41,22 @@
     </div>
   </div>
 </div>
-<h2>Biography</h2>
+<div class="site-body">
+<aside class="site-sidebar">
+<nav class="site-nav" aria-label="Page sections">
+  <div class="site-nav-inner">
+    <a class="site-nav-link" href="#about">About</a>
+    <a class="site-nav-link" href="#news">News</a>
+    <a class="site-nav-link" href="#publications">Publications</a>
+    <a class="site-nav-link" href="#service">Service</a>
+  </div>
+</nav>
+</aside>
+<div class="site-main">
+<script type="text/javascript">
+(function(){var sb=document.querySelector(".site-sidebar"),n=document.querySelector(".site-nav");if(!n||!sb)return;var l=[].slice.call(n.querySelectorAll(".site-nav-link")),s=l.map(function(a){return document.querySelector(a.getAttribute("href"))}).filter(Boolean);window.addEventListener("scroll",function(){sb.classList.toggle("is-scrolled",window.scrollY>8)},{passive:true});if(!("IntersectionObserver"in window)||!s.length)return;var o=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting){var i=t.target.id;l.forEach(function(a){a.classList.toggle("is-active",a.getAttribute("href")==="#"+i)})}})},{rootMargin:"-42% 0px -48% 0px",threshold:0});s.forEach(function(t){o.observe(t)})})();
+</script>
+<h2 id="about">Biography</h2>
 <p class="bio-text">I am a Ph.D. student in the <a href="https://www.cs.sjtu.edu.cn/" target="_blank" rel="noopener noreferrer">Department of Computer Science and Engineering</a> at Shanghai Jiao Tong University and a member of <a href="https://pair-lab.com/" target="_blank" rel="noopener noreferrer">PAIR Lab</a>. I am co-advised by <a href="https://www.yangyaodong.com/" target="_blank" rel="noopener noreferrer">Prof. Yaodong Yang</a> and <a href="https://yingwen.io/" target="_blank" rel="noopener noreferrer">Prof. Ying Wen</a>, and I am also part of the Wen-Tsun Wu AI Honorary Doctoral Class advised by <a href="https://www.mvig.org/" target="_blank" rel="noopener noreferrer">Prof. Cewu Lu</a>.</p>
 <p class="bio-text">My research focuses on dexterous manipulation, preference-based reinforcement learning, and AI alignment, with the goal of building effective learning systems that align with complex human preferences. I am always open to collaboration and discussion on shared interests.</p>
 
@@ -144,7 +159,7 @@
     </div>
   </div>
 </div>
-<h2>News</h2>
+<h2 id="news">News</h2>
 <div class="news-stream">
   <div class="news-item">
     <span class="news-date">2026.06</span>
@@ -162,29 +177,39 @@
     <span class="news-date">2025.09</span>
     <span class="news-text">ValueDCG was accepted to the NeurIPS 2025 Workshop on Regulatable ML.</span>
   </div>
-  <div class="news-item">
+  <div class="news-item news-item-expandable" id="news-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="news-more">
+    <span class="news-expand-arrow" aria-hidden="true"></span>
     <span class="news-date">2025.09</span>
     <span class="news-text">Two papers were accepted to NeurIPS 2025, with one selected as Spotlight.</span>
   </div>
-  <div class="news-item">
-    <span class="news-date">2025.08</span>
-    <span class="news-text">AdaptFlow was accepted to EMNLP 2025.</span>
-  </div>
-  <div class="news-item">
-    <span class="news-date">2025.07</span>
-    <span class="news-text">We released our VLA survey, <em>A Survey on Vision-Language-Action Models</em>.</span>
-  </div>
-  <div class="news-item">
-    <span class="news-date">2025.06</span>
-    <span class="news-text">One paper was accepted for oral presentation at AGI 2025.</span>
+</div>
+<div class="news-expand-divider" aria-hidden="true"></div>
+<div class="news-collapsible" id="news-more">
+  <div class="news-collapsible-inner news-stream">
+    <div class="news-item">
+      <span class="news-date">2025.08</span>
+      <span class="news-text">AdaptFlow was accepted to EMNLP 2025.</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.07</span>
+      <span class="news-text">We released our VLA survey, <em>A Survey on Vision-Language-Action Models</em>.</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.06</span>
+      <span class="news-text">One paper was accepted for oral presentation at AGI 2025.</span>
+    </div>
   </div>
 </div>
-<h2>Selected Publications</h2>
+<script type="text/javascript">
+(function(){var t=document.getElementById('news-toggle'),m=document.getElementById('news-more'),d=document.querySelector('.news-expand-divider');if(!t||!m)return;function toggle(){var open=m.classList.toggle('news-expanded');t.classList.toggle('is-expanded',open);t.setAttribute('aria-expanded',open);if(d)d.classList.toggle('is-hidden',open);}t.addEventListener('click',toggle);t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});})();
+</script>
+<h2 id="publications">Selected Publications</h2>
 <p class="section-note">* denotes equal contribution.</p>
 
 <!-- ── Featured publications (1st / 2nd / 3rd author) ── -->
 <div class="pub-list" id="pub-featured">
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="gears" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <span class="pub-title">GEARS: Seeing Geometry, Diffusing Actions for Zero-Shot Sim-to-Real Dexterous Manipulation</span>
     </div>
@@ -193,6 +218,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="retrdex" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://arxiv.org/abs/2502.18423" target="_blank" rel="noopener noreferrer">RetrDex: Efficient Object Retrieval in Cluttered Scenes with a Dexterous Hand</a>
     </div>
@@ -205,6 +231,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="safelab" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://icml.cc/virtual/2026/poster/61584" target="_blank" rel="noopener noreferrer">SafeLab: An Interactive High-Fidelity Benchmark for Embodied Safety in Scientific Robotics</a>
     </div>
@@ -216,6 +243,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="star" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://arxiv.org/abs/2405.18688" target="_blank" rel="noopener noreferrer">STAR: Efficient Preference-based Reinforcement Learning via Dual Regularization</a>
     </div>
@@ -228,6 +256,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="dexflywheel" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://arxiv.org/abs/2509.23829" target="_blank" rel="noopener noreferrer">DexFlyWheel: A Scalable and Self-improving Data Generation Framework for Dexterous Manipulation</a>
       <span class="pub-badge pub-badge-spotlight">Spotlight</span>
@@ -241,6 +270,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="valuedcg" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://openreview.net/forum?id=vnz86or4pz" target="_blank" rel="noopener noreferrer">ValueDCG: Measuring Comprehensive Human Value Understanding Ability of Language Models</a>
     </div>
@@ -253,6 +283,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="vla-survey" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://arxiv.org/abs/2507.01925" target="_blank" rel="noopener noreferrer">A Survey on Vision-Language-Action Models: An Action Tokenization Perspective</a>
     </div>
@@ -266,6 +297,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="incentive-roadmap" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://arxiv.org/abs/2402.12907" target="_blank" rel="noopener noreferrer">Roadmap on Incentive Compatibility for AI Alignment and Governance in Sociotechnical Systems</a>
       <span class="pub-badge pub-badge-oral">Oral</span>
@@ -278,6 +310,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="amulet" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://openreview.net/forum?id=f9w89OY2cp" target="_blank" rel="noopener noreferrer">Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs</a>
     </div>
@@ -292,6 +325,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="rat" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/33696" target="_blank" rel="noopener noreferrer">RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors</a>
       <span class="pub-badge pub-badge-oral">Oral</span>
@@ -307,6 +341,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="bayesian-persuasion" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://arxiv.org/abs/2405.18718" target="_blank" rel="noopener noreferrer">Efficient Model-agnostic Alignment via Bayesian Persuasion</a>
     </div>
@@ -319,6 +354,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="beta-dqn" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://dl.acm.org/doi/10.5555/3709347.3743872" target="_blank" rel="noopener noreferrer">&beta;-DQN: Improving Deep Q-Learning by Evolving the Behavior</a>
       <span class="pub-badge pub-badge-oral">Oral</span>
@@ -332,6 +368,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="pearl" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://openreview.net/forum?id=0urN0PnNDj" target="_blank" rel="noopener noreferrer">PEARL: Zero-shot Cross-task Preference Alignment and Robust Reward Learning for Robotic Manipulation</a>
     </div>
@@ -345,6 +382,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="picor" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/25825" target="_blank" rel="noopener noreferrer">PiCor: Multi-task Deep Reinforcement Learning with Policy Correction</a>
       <span class="pub-badge pub-badge-oral">Oral</span>
@@ -358,6 +396,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="meta-reward-net" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/8be9c134bb193d8bd3827d4df8488228-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">Meta-reward-net: Implicitly Differentiable Reward Learning for Preference-based Reinforcement Learning</a>
     </div>
@@ -378,6 +417,7 @@
 <div class="pub-collapsible" id="pub-more">
   <div class="pub-collapsible-inner pub-list">
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="policon" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://openreview.net/forum?id=MHlwNs9k1Y" target="_blank" rel="noopener noreferrer">PoliCon: Evaluating LLMs on Achieving Diverse Political Consensus Objectives</a>
     </div>
@@ -391,6 +431,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="adaptflow" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://arxiv.org/abs/2508.08053" target="_blank" rel="noopener noreferrer">AdaptFlow: Adaptive Workflow Optimization via Meta-Learning</a>
     </div>
@@ -402,6 +443,7 @@
   </div>
 
   <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="grait" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
       <a class="pub-title" href="https://aclanthology.org/2025.findings-naacl.223/" target="_blank" rel="noopener noreferrer">GRAIT: Gradient-Driven Refusal-Aware Instruction Tuning for Effective Hallucination Mitigation</a>
     </div>
@@ -414,7 +456,10 @@
   </div>
   </div>
 </div>
-<h2>Academic Service</h2>
+<script type="text/javascript">
+function copyBibtex(btn){var slug=btn.getAttribute('data-bib');fetch('asserts/bibtex/'+slug+'.bib').then(function(r){if(!r.ok)throw new Error('fetch failed');return r.text();}).then(function(text){return navigator.clipboard.writeText(text);}).then(function(){var orig=btn.textContent;btn.textContent='Copied!';setTimeout(function(){btn.textContent=orig;},1500);}).catch(function(){var orig=btn.textContent;btn.textContent='Failed';setTimeout(function(){btn.textContent=orig;},1500);});}
+</script>
+<h2 id="service">Academic Service</h2>
 <div class="service-block">
   <p class="service-role">Conference Reviewer</p>
   <div class="service-badge-grid">
@@ -429,25 +474,17 @@
     <span class="service-badge"><span class="service-badge-name">DAI</span><span class="service-badge-year">2023&ndash;2024</span></span>
   </div>
 </div>
-<h2>Visitors</h2>
-<div class="visitors-panel" id="clustrmaps-widget">
-  <a class="clustrmaps-link" href="https://www.clustrmaps.com/" target="_blank" rel="noopener noreferrer" aria-label="View visitor map on ClustrMaps">
-    <img
-      class="clustrmaps-map"
-      src="https://www.clustrmaps.com/map_v2.png?cl=f8fafc&amp;w=320&amp;t=tt&amp;d=qVXmqI50LHdDWdRzTqaNyq8Uf3l13TYqDyI3oLM6wo4&amp;co=94a3b8&amp;ct=334155&amp;cmo=22c55e&amp;cmn=ef4444"
-      alt="Visitor map"
-      width="320"
-      height="200"
-      loading="lazy"
-      decoding="async"
-      onerror="this.closest('.visitors-panel').classList.add('is-unavailable')"
-    />
-  </a>
-  <p class="visitors-fallback">Visitor map is blocked on this network. Try opening via VPN or visit <a href="https://www.clustrmaps.com/" target="_blank" rel="noopener noreferrer">ClustrMaps</a>.</p>
+<h2 id="visitors">Visitors</h2>
+<div class="visitors-panel">
+  <div class="visitors-map-wrap" id="visitor-map">
+    <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=G1TCxahhlAz3HP6t2VE8KU9UD2iniFYIbJ027odeTcY&amp;cl=ffffff&amp;w=a"></script>
+  </div>
 </div>
 <footer class="site-footer">
   <p>&copy; 2025&ndash;2026 Fengshuo Bai &middot; Last updated Jun 2026</p>
 </footer>
+</div>
+</div>
 </div>
 </body>
 </html>
