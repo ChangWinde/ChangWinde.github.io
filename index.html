@@ -41,21 +41,7 @@
     </div>
   </div>
 </div>
-<div class="site-body">
-<aside class="site-sidebar">
-<nav class="site-nav" aria-label="Page sections">
-  <div class="site-nav-inner">
-    <a class="site-nav-link" href="#about">About</a>
-    <a class="site-nav-link" href="#news">News</a>
-    <a class="site-nav-link" href="#publications">Publications</a>
-    <a class="site-nav-link" href="#service">Service</a>
-  </div>
-</nav>
-</aside>
 <div class="site-main">
-<script type="text/javascript">
-(function(){var sb=document.querySelector(".site-sidebar"),n=document.querySelector(".site-nav");if(!n||!sb)return;var l=[].slice.call(n.querySelectorAll(".site-nav-link")),s=l.map(function(a){return document.querySelector(a.getAttribute("href"))}).filter(Boolean);window.addEventListener("scroll",function(){sb.classList.toggle("is-scrolled",window.scrollY>8)},{passive:true});if(!("IntersectionObserver"in window)||!s.length)return;var o=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting){var i=t.target.id;l.forEach(function(a){a.classList.toggle("is-active",a.getAttribute("href")==="#"+i)})}})},{rootMargin:"-42% 0px -48% 0px",threshold:0});s.forEach(function(t){o.observe(t)})})();
-</script>
 <h2 id="about">Biography</h2>
 <p class="bio-text">I am a Ph.D. student in the <a href="https://www.cs.sjtu.edu.cn/" target="_blank" rel="noopener noreferrer">Department of Computer Science and Engineering</a> at Shanghai Jiao Tong University and a member of <a href="https://pair-lab.com/" target="_blank" rel="noopener noreferrer">PAIR Lab</a>. I am co-advised by <a href="https://www.yangyaodong.com/" target="_blank" rel="noopener noreferrer">Prof. Yaodong Yang</a> and <a href="https://yingwen.io/" target="_blank" rel="noopener noreferrer">Prof. Ying Wen</a>, and I am also part of the Wen-Tsun Wu AI Honorary Doctoral Class advised by <a href="https://www.mvig.org/" target="_blank" rel="noopener noreferrer">Prof. Cewu Lu</a>.</p>
 <p class="bio-text">My research focuses on dexterous manipulation, preference-based reinforcement learning, and AI alignment, with the goal of building effective learning systems that align with complex human preferences. I am always open to collaboration and discussion on shared interests.</p>
@@ -483,7 +469,6 @@ function copyBibtex(btn){var slug=btn.getAttribute('data-bib');fetch('asserts/bi
 <footer class="site-footer">
   <p>&copy; 2025&ndash;2026 Fengshuo Bai &middot; Last updated Jun 2026</p>
 </footer>
-</div>
 </div>
 </div>
 </body>
