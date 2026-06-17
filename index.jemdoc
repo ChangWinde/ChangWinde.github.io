@@ -147,6 +147,10 @@
 {}{raw}
 <div class="news-stream">
   <div class="news-item">
+    <span class="news-date">2026.06</span>
+    <span class="news-text">RetrDex was accepted to IROS 2026.</span>
+  </div>
+  <div class="news-item">
     <span class="news-date">2026.04</span>
     <span class="news-text">SafeLab was accepted to ICML 2026.</span>
   </div>
@@ -180,16 +184,27 @@
 == Selected Publications
 ~~~
 {}{raw}
-<p class="section-note">* denotes equal contribution. Showing first-, co-first-, second-, and third-author papers by default.</p>
+<p class="section-note">* denotes equal contribution.</p>
 
 <!-- ── Featured publications (1st / 2nd / 3rd author) ── -->
 <div class="pub-list" id="pub-featured">
-  <p class="pub-year-group">2025 &ndash; 2026</p>
+  <div class="pub-item">
+    <div class="pub-head">
+      <a class="pub-title" href="https://arxiv.org/abs/2502.18423" target="_blank" rel="noopener noreferrer">RetrDex: Efficient Object Retrieval in Cluttered Scenes with a Dexterous Hand</a>
+    </div>
+    <p class="pub-authors"><strong>Fengshuo Bai</strong>, <a href="https://github.com/Student-of-Holmes">Yu Li</a>, <a href="https://bxzzcj.github.io/">Jie Chu</a>, <a href="https://openreview.net/profile?id=~Tawei_Chou1">Tawei Chou</a>, <a href="https://github.com/Zrc007">Runchuan Zhu</a>, <a href="https://yingwen.io/">Ying Wen</a>, <a href="https://www.yangyaodong.com/">Yaodong Yang</a>, <a href="https://cypypccpy.github.io/">Yuanpei Chen</a></p>
+    <p class="pub-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026</p>
+    <div class="pub-links">
+      <a class="pub-link" href="https://arxiv.org/abs/2502.18423" target="_blank" rel="noopener noreferrer">Paper</a>
+      <a class="pub-link" href="https://changwinde.github.io/RetrDex/" target="_blank" rel="noopener noreferrer">Project</a>
+    </div>
+  </div>
+
   <div class="pub-item">
     <div class="pub-head">
       <a class="pub-title" href="https://icml.cc/virtual/2026/poster/61584" target="_blank" rel="noopener noreferrer">SafeLab: An Interactive High-Fidelity Benchmark for Embodied Safety in Scientific Robotics</a>
     </div>
-    <p class="pub-authors"><strong>Fengshuo Bai</strong>, Yufeng Li, <a href="https://warshallrho.github.io/">Ruihai Wu</a>, Peishuo Wang, Yuhan Wang, <a href="https://berniezhu.github.io/">Bernie Hao Zhu</a>, <a href="https://yuanfei-wang.github.io/">Yuanfei Wang</a>, <a href="https://openreview.net/profile?id=~Tawei_Chou1">Tawei Chou</a>, Jing Gao, <a href="https://github.com/Zrc007">Runchuan Zhu</a>, <a href="https://yingwen.io/">Ying Wen</a>, <a href="https://www.yangyaodong.com/">Yaodong Yang</a>, <a href="https://cypypccpy.github.io/">Yuanpei Chen</a></p>
+    <p class="pub-authors"><strong>Fengshuo Bai</strong>*, Yufeng Li*, <a href="https://warshallrho.github.io/">Ruihai Wu</a>*, Peishuo Wang, Yuhan Wang, <a href="https://berniezhu.github.io/">Bernie Hao Zhu</a>, <a href="https://yuanfei-wang.github.io/">Yuanfei Wang</a>, <a href="https://openreview.net/profile?id=~Tawei_Chou1">Tawei Chou</a>, Jing Gao, <a href="https://github.com/Zrc007">Runchuan Zhu</a>, <a href="https://yingwen.io/">Ying Wen</a>, <a href="https://www.yangyaodong.com/">Yaodong Yang</a>, <a href="https://cypypccpy.github.io/">Yuanpei Chen</a></p>
     <p class="pub-venue">International Conference on Machine Learning (ICML), 2026</p>
     <div class="pub-links">
       <a class="pub-link" href="https://icml.cc/virtual/2026/poster/61584" target="_blank" rel="noopener noreferrer">Paper</a>
@@ -237,7 +252,7 @@
     <div class="pub-head">
       <a class="pub-title" href="https://arxiv.org/abs/2507.01925" target="_blank" rel="noopener noreferrer">A Survey on Vision-Language-Action Models: An Action Tokenization Perspective</a>
     </div>
-    <p class="pub-authors">Yifan Zhong*, <strong>Fengshuo Bai</strong>*, Shaofei Cai, Xuchuan Huang, Zhang Chen, Xiaowei Zhang, Yuanfei Wang, Shaoyang Guo, Tianrui Guan, Ka Nam Lui, Zhiquan Qi, Yitao Liang, <a href="https://cypypccpy.github.io/">Yuanpei Chen</a>, <a href="https://www.yangyaodong.com/">Yaodong Yang</a></p>
+    <p class="pub-authors">Yifan Zhong*, <strong>Fengshuo Bai</strong>*, Shaofei Cai, Xuchuan Huang, Zhang Chen, Xiaowei Zhang, <a href="https://yuanfei-wang.github.io/">Yuanfei Wang</a>, Shaoyang Guo, Tianrui Guan, Ka Nam Lui, Zhiquan Qi, Yitao Liang, <a href="https://cypypccpy.github.io/">Yuanpei Chen</a>, <a href="https://www.yangyaodong.com/">Yaodong Yang</a></p>
     <p class="pub-venue">Preprint, 2025</p>
     <div class="pub-links">
       <a class="pub-link" href="https://arxiv.org/abs/2507.01925" target="_blank" rel="noopener noreferrer">Paper</a>
@@ -255,18 +270,6 @@
     <p class="pub-venue">Artificial General Intelligence Conference (AGI), 2025</p>
     <div class="pub-links">
       <a class="pub-link" href="https://arxiv.org/abs/2402.12907" target="_blank" rel="noopener noreferrer">Paper</a>
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <div class="pub-head">
-      <a class="pub-title" href="https://arxiv.org/abs/2502.18423" target="_blank" rel="noopener noreferrer">Retrieval Dexterity: Efficient Object Retrieval in Clutters with Dexterous Hand</a>
-    </div>
-    <p class="pub-authors"><strong>Fengshuo Bai</strong>, <a href="https://github.com/Student-of-Holmes">Yu Li</a>, <a href="https://bxzzcj.github.io/">Jie Chu</a>, <a href="https://openreview.net/profile?id=~Tawei_Chou1">Tawei Chou</a>, <a href="https://github.com/Zrc007">Runchuan Zhu</a>, <a href="https://yingwen.io/">Ying Wen</a>, <a href="https://www.yangyaodong.com/">Yaodong Yang</a>, <a href="https://cypypccpy.github.io/">Yuanpei Chen</a></p>
-    <p class="pub-venue">Preprint, 2025</p>
-    <div class="pub-links">
-      <a class="pub-link" href="https://arxiv.org/abs/2502.18423" target="_blank" rel="noopener noreferrer">Paper</a>
-      <a class="pub-link" href="https://changwinde.github.io/RetrDex/" target="_blank" rel="noopener noreferrer">Project</a>
     </div>
   </div>
 
@@ -299,7 +302,6 @@
     </div>
   </div>
 
-  <p class="pub-year-group">2024</p>
   <div class="pub-item">
     <div class="pub-head">
       <a class="pub-title" href="https://arxiv.org/abs/2405.18718" target="_blank" rel="noopener noreferrer">Efficient Model-agnostic Alignment via Bayesian Persuasion</a>
@@ -338,7 +340,6 @@
     </div>
   </div>
 
-  <p class="pub-year-group">2022 &ndash; 2023</p>
   <div class="pub-item">
     <div class="pub-head">
       <a class="pub-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/25825" target="_blank" rel="noopener noreferrer">PiCor: Multi-task Deep Reinforcement Learning with Policy Correction</a>
@@ -417,26 +418,26 @@
 <div class="service-block">
   <p class="service-role">Conference Reviewer</p>
   <div class="service-badge-grid">
-    <span class="service-badge"><span class="service-badge-name">NeurIPS</span><span class="service-badge-year">2024&ndash;2025</span></span>
+    <span class="service-badge"><span class="service-badge-name">NeurIPS</span><span class="service-badge-year">2024&ndash;2026</span></span>
     <span class="service-badge"><span class="service-badge-name">ICLR</span><span class="service-badge-year">2025&ndash;2026</span></span>
     <span class="service-badge"><span class="service-badge-name">ICML</span><span class="service-badge-year">2025&ndash;2026</span></span>
     <span class="service-badge"><span class="service-badge-name">AAAI</span><span class="service-badge-year">2025&ndash;2026</span></span>
     <span class="service-badge"><span class="service-badge-name">IJCAI</span><span class="service-badge-year">2025</span></span>
     <span class="service-badge"><span class="service-badge-name">AAMAS</span><span class="service-badge-year">2024&ndash;2026</span></span>
     <span class="service-badge"><span class="service-badge-name">ECCV</span><span class="service-badge-year">2026</span></span>
-    <span class="service-badge"><span class="service-badge-name">IROS</span><span class="service-badge-year">2025</span></span>
+    <span class="service-badge"><span class="service-badge-name">IROS</span><span class="service-badge-year">2025&ndash;2026</span></span>
     <span class="service-badge"><span class="service-badge-name">DAI</span><span class="service-badge-year">2023&ndash;2024</span></span>
   </div>
 </div>
 ~~~
 
-=== Visitors
+== Visitors
 ~~~
 {}{raw}
 <div class="visitors-panel">
-  <script type="text/javascript" id="clustrmaps" src="https://cdn.clustrmaps.com/map_v2.js?cl=ffffff&amp;w=300&amp;t=tt&amp;d=qVXmqI50LHdDWdRzTqaNyq8Uf3l13TYqDyI3oLM6wo4"></script>
+  <script type="text/javascript" id="clustrmaps" src="https://cdn.clustrmaps.com/map_v2.js?cl=ffffff&amp;w=300&amp;t=tt&amp;d=qVXmqI50LHdDWdRzTqaNyq8Uf3l13TYqDyI3oLM6wo4&amp;co=2d78ad&amp;ct=ffffff&amp;cmo=3acc3a&amp;cmn=ff5353"></script>
 </div>
 <footer class="site-footer">
-  <p>&copy; 2025&ndash;2026 Fengshuo Bai &middot; Last updated Mar 2026</p>
+  <p>&copy; 2025&ndash;2026 Fengshuo Bai &middot; Last updated Jun 2026</p>
 </footer>
 ~~~

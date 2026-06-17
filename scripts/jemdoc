@@ -1,0 +1,261 @@
+#!/usr/bin/env bash
+# jemdoc — build helper for ChangWinde.github.io
+# Usage:
+#   ./scripts/jemdoc                 # build index.jemdoc
+#   ./scripts/jemdoc index.jemdoc    # build a specific file
+#   ./scripts/jemdoc watch           # rebuild on save
+#   ./scripts/jemdoc open            # build + open in browser
+#   ./scripts/jemdoc setup           # check scripts/jemdoc.py + shell alias
+#   ./scripts/jemdoc clean           # remove generated html
+
+set -euo pipefail
+
+readonly JEMDOC_PY3_URL="https://raw.githubusercontent.com/mengzili/jemdoc-python3/master/jemdoc.py"
+readonly DEFAULT_SOURCE="index.jemdoc"
+
+# ── colors ────────────────────────────────────────────────────────────────────
+if [[ -t 1 ]] && command -v tput >/dev/null 2>&1; then
+  BOLD="$(tput bold)" DIM="$(tput dim)" RESET="$(tput sgr0)"
+  GREEN="$(tput setaf 2)" YELLOW="$(tput setaf 3)" RED="$(tput setaf 1)" CYAN="$(tput setaf 6)"
+else
+  BOLD="" DIM="" RESET="" GREEN="" YELLOW="" RED="" CYAN=""
+fi
+
+info()  { printf "%s%s%s\n" "${CYAN}" "$*" "${RESET}"; }
+ok()    { printf "%s✓ %s%s\n" "${GREEN}" "$*" "${RESET}"; }
+warn()  { printf "%s! %s%s\n" "${YELLOW}" "$*" "${RESET}" >&2; }
+die()   { printf "%s✗ %s%s\n" "${RED}" "$*" "${RESET}" >&2; exit 1; }
+
+# ── paths ─────────────────────────────────────────────────────────────────────
+find_root() {
+  local dir
+  dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+  while [[ "$dir" != "/" ]]; do
+    [[ -f "$dir/index.jemdoc" ]] && { echo "$dir"; return 0; }
+    dir="$(dirname "$dir")"
+  done
+  die "Cannot find project root (missing index.jemdoc)."
+}
+
+ROOT="$(find_root)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+JEMDOC_BIN="${SCRIPT_DIR}/jemdoc.py"
+JEMDOC_CONF="${ROOT}/config/jemdoc.conf"
+cd "$ROOT"
+
+# ── bootstrap ─────────────────────────────────────────────────────────────────
+ensure_jemdoc() {
+  [[ -f "$JEMDOC_BIN" ]] && return 0
+  warn "jemdoc.py not found — downloading to scripts/..."
+  if ! command -v curl >/dev/null 2>&1; then
+    die "curl is required to download jemdoc.py"
+  fi
+  mkdir -p "$SCRIPT_DIR"
+  curl -fsSL "$JEMDOC_PY3_URL" -o "$JEMDOC_BIN"
+  chmod +x "$JEMDOC_BIN"
+  ok "Downloaded scripts/jemdoc.py"
+}
+
+ensure_python() {
+  command -v python3 >/dev/null 2>&1 || die "python3 is required but not found."
+}
+
+output_for() {
+  local src="$1"
+  basename "${src%.jemdoc}.html"
+}
+
+build_one() {
+  local src="$1"
+  local out html_mtime src_mtime
+
+  [[ -f "$src" ]] || die "Source not found: $src"
+  [[ "$src" == *.jemdoc ]] || die "Expected a .jemdoc file: $src"
+
+  ensure_python
+  ensure_jemdoc
+
+  out="$(output_for "$src")"
+  info "Building ${BOLD}${src}${RESET} → ${BOLD}${out}${RESET}"
+
+  python3 "$JEMDOC_BIN" -c "$JEMDOC_CONF" "$src"
+
+  html_mtime="$(stat -f %m "$out" 2>/dev/null || stat -c %Y "$out")"
+  src_mtime="$(stat -f %m "$src" 2>/dev/null || stat -c %Y "$src")"
+  if (( html_mtime >= src_mtime )); then
+    ok "Done — ${out}"
+  else
+    warn "Built ${out}, but timestamps look odd; check output manually."
+  fi
+}
+
+build_all() {
+  local -a sources=()
+  if [[ $# -gt 0 ]]; then
+    sources=("$@")
+  else
+    sources=("$DEFAULT_SOURCE")
+  fi
+  for src in "${sources[@]}"; do
+    build_one "$src"
+  done
+}
+
+readonly DEFAULT_PORT="${JEMDOC_PORT:-8765}"
+
+ensure_server() {
+  local port="$1"
+  if lsof -nP -iTCP:"$port" -sTCP:LISTEN >/dev/null 2>&1; then
+    return 0
+  fi
+  info "Starting preview server on port ${port}..."
+  nohup python3 -m http.server "$port" --directory "$ROOT" >/dev/null 2>&1 &
+  disown 2>/dev/null || true
+  sleep 0.4
+  lsof -nP -iTCP:"$port" -sTCP:LISTEN >/dev/null 2>&1 || die "Failed to start preview server on port ${port}."
+  ok "Preview server running — http://localhost:${port}/"
+}
+
+cmd_clean() {
+  local src out removed=0
+  for src in "$ROOT"/*.jemdoc; do
+    [[ -f "$src" ]] || continue
+    out="$(output_for "$src")"
+    if [[ -f "$out" ]]; then
+      rm -f "$out"
+      ok "Removed ${out}"
+      removed=1
+    fi
+  done
+  [[ "$removed" -eq 1 ]] || info "Nothing to clean."
+}
+
+cmd_open() {
+  build_all "$DEFAULT_SOURCE"
+  ensure_server "$DEFAULT_PORT"
+  local url="http://localhost:${DEFAULT_PORT}/index.html"
+  if [[ "$OSTYPE" == darwin* ]]; then
+    open "$url"
+  elif command -v xdg-open >/dev/null 2>&1; then
+    xdg-open "$url"
+  else
+    warn "Open in your browser: ${url}"
+    return 0
+  fi
+  ok "Opened ${url}"
+}
+
+cmd_serve() {
+  local port="${1:-$DEFAULT_PORT}"
+  build_all "$DEFAULT_SOURCE"
+  info "Serving ${ROOT} at ${BOLD}http://localhost:${port}/${RESET}"
+  info "Visitor map and external scripts work here (not with file://)."
+  info "Press Ctrl+C to stop."
+  exec python3 -m http.server "$port" --directory "$ROOT"
+}
+
+cmd_watch() {
+  local src="${1:-$DEFAULT_SOURCE}"
+  build_one "$src"
+  info "Watching ${BOLD}${src}${RESET} — Ctrl+C to stop"
+
+  if command -v fswatch >/dev/null 2>&1; then
+    fswatch -o "$src" "$JEMDOC_CONF" "${ROOT}/config/jemdoc.css" | while read -r _; do
+      build_one "$src"
+    done
+  else
+    warn "fswatch not installed — using poll mode (every 2s). Install: brew install fswatch"
+    local last
+    last="$(stat -f %m "$src" 2>/dev/null || stat -c %Y "$src")"
+    while true; do
+      sleep 2
+      local now
+      now="$(stat -f %m "$src" 2>/dev/null || stat -c %Y "$src")"
+      if [[ "$now" != "$last" ]]; then
+        last="$now"
+        build_one "$src"
+      fi
+    done
+  fi
+}
+
+cmd_setup() {
+  ensure_python
+  ensure_jemdoc
+  ok "scripts/jemdoc.py is ready"
+
+  local alias_line
+  alias_line="alias jemdoc='${ROOT}/scripts/jemdoc'"
+
+  printf "\n%s%sAdd this to ~/.zshrc for global access:%s\n\n" "$BOLD" "$CYAN" "$RESET"
+  printf "  %s\n\n" "$alias_line"
+  printf "%sThen run:%s  jemdoc index.jemdoc\n\n" "$DIM" "$RESET"
+
+  if [[ -f "${HOME}/.zshrc" ]] && grep -Fq "$alias_line" "${HOME}/.zshrc" 2>/dev/null; then
+    ok "Alias already present in ~/.zshrc"
+  else
+    warn "Alias not installed yet — copy the line above if you want it."
+  fi
+}
+
+cmd_help() {
+  cat <<EOF
+${BOLD}jemdoc${RESET} — site builder for ${ROOT}
+
+${BOLD}Usage:${RESET}
+  ./scripts/jemdoc [file.jemdoc ...]   Build (default: index.jemdoc)
+  ./scripts/jemdoc watch [file]        Rebuild on save
+  ./scripts/jemdoc open                Build + open via local server
+  ./scripts/jemdoc serve [port]        Build + start preview server (default: 8765)
+  ./scripts/jemdoc clean               Remove generated HTML
+  ./scripts/jemdoc setup               Bootstrap + show shell alias
+  ./scripts/jemdoc help                Show this message
+
+${BOLD}Examples:${RESET}
+  ./scripts/jemdoc index.jemdoc
+  ./scripts/jemdoc watch
+  ./scripts/jemdoc open
+
+${BOLD}Tip:${RESET} Run ${BOLD}./scripts/jemdoc setup${RESET} once, add the alias to ~/.zshrc,
+       then use ${BOLD}jemdoc index.jemdoc${RESET} from anywhere inside the repo.
+EOF
+}
+
+# ── main ──────────────────────────────────────────────────────────────────────
+main() {
+  if [[ $# -eq 0 ]]; then
+    build_all "$DEFAULT_SOURCE"
+    return
+  fi
+
+  case "$1" in
+    help|-h|--help)
+      cmd_help
+      ;;
+    setup)
+      cmd_setup
+      ;;
+    clean)
+      cmd_clean
+      ;;
+    open)
+      cmd_open
+      ;;
+    serve)
+      shift
+      cmd_serve "${1:-}"
+      ;;
+    watch)
+      shift
+      cmd_watch "${1:-$DEFAULT_SOURCE}"
+      ;;
+    *.jemdoc)
+      build_all "$@"
+      ;;
+    *)
+      die "Unknown command: $1  (try: ./scripts/jemdoc help)"
+      ;;
+  esac
+}
+
+main "$@"
