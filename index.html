@@ -148,6 +148,10 @@
 <h2 id="news">News</h2>
 <div class="news-stream">
   <div class="news-item">
+    <span class="news-date">2026.09</span>
+    <span class="news-text">One paper was accepted to IEEE Transactions on Automation Science and Engineering (T-ASE).</span>
+  </div>
+  <div class="news-item">
     <span class="news-date">2026.06</span>
     <span class="news-text">RetrDex was accepted to IROS 2026.</span>
   </div>
@@ -159,19 +163,19 @@
     <span class="news-date">2026.01</span>
     <span class="news-text">PoliCon was accepted to ICLR 2026.</span>
   </div>
-  <div class="news-item">
-    <span class="news-date">2025.09</span>
-    <span class="news-text">ValueDCG was accepted to the NeurIPS 2025 Workshop on Regulatable ML.</span>
-  </div>
   <div class="news-item news-item-expandable" id="news-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="news-more">
     <span class="news-expand-arrow" aria-hidden="true"></span>
     <span class="news-date">2025.09</span>
-    <span class="news-text">Two papers were accepted to NeurIPS 2025, with one selected as Spotlight.</span>
+    <span class="news-text">ValueDCG was accepted to the NeurIPS 2025 Workshop on Regulatable ML.</span>
   </div>
 </div>
 <div class="news-expand-divider" aria-hidden="true"></div>
 <div class="news-collapsible" id="news-more">
   <div class="news-collapsible-inner news-stream">
+    <div class="news-item">
+      <span class="news-date">2025.09</span>
+      <span class="news-text">Two papers were accepted to NeurIPS 2025, with one selected as Spotlight.</span>
+    </div>
     <div class="news-item">
       <span class="news-date">2025.08</span>
       <span class="news-text">AdaptFlow was accepted to EMNLP 2025.</span>
@@ -194,6 +198,15 @@
 
 <!-- ── Featured publications (1st / 2nd / 3rd author) ── -->
 <div class="pub-list" id="pub-featured">
+  <div class="pub-item">
+    <button type="button" class="pub-bibtex-corner" data-bib="neural-adaptive-ftc" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
+    <div class="pub-head">
+      <span class="pub-title">Neural-Adaptive Fault-Tolerant Control for Resilient Robot Manipulation Under Actuator Failures</span>
+    </div>
+    <p class="pub-authors"><a href="https://openreview.net/profile?id=~Tawei_Chou1">Tawei Chou</a>, <strong>Fengshuo Bai</strong>, Yuwan Liu, <a href="https://asimfish.github.io/">Yufeng Li</a>, <a href="https://www.yangyaodong.com/">Yaodong Yang</a>, XiaoShan Ma</p>
+    <p class="pub-venue">IEEE Transactions on Automation Science and Engineering (T-ASE), 2026</p>
+  </div>
+
   <div class="pub-item">
     <button type="button" class="pub-bibtex-corner" data-bib="gears" onclick="copyBibtex(this)" aria-label="Copy BibTeX">BibTeX</button>
     <div class="pub-head">
@@ -467,7 +480,7 @@ function copyBibtex(btn){var slug=btn.getAttribute('data-bib');fetch('asserts/bi
   </div>
 </div>
 <footer class="site-footer">
-  <p>&copy; 2025&ndash;2026 Fengshuo Bai &middot; Last updated Jun 2026</p>
+  <p>&copy; 2025&ndash;2026 Fengshuo Bai &middot; Last updated Sep 2026</p>
 </footer>
 </div>
 </div>
